@@ -1,0 +1,13 @@
+<div class='comment'>
+  <div class='comment-content'>
+    <b>
+      <%= comment.name %>
+    </b>
+    <p>
+      <%= I18n.l(comment.created_at, format: :short, locale: :ru) %>
+    </p>
+    <p>
+      <%= comment.body %>
+    </p>
+  </div>
+</div>

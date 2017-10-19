@@ -1,0 +1,18 @@
+.albulm-title {
+  text-align: center;
+}
+.albulm-description {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.albulm-image-wrap {
+  margin-bottom: 30px;
+}
+.albulm-image {
+  width: 100%;
+  height: 100%;
+  @media (min-width: 1200px) {
+    width: 500px;
+    height: 500px;
+  }
+}

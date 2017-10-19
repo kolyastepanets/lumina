@@ -1,0 +1,25 @@
+<div class='col-md-4 col-xs-12 container-right center'>
+  <%= image_tag 'https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/lili1.jpg', class: 'image-lili' %>
+  <p><%= I18n.t('articles.right_container.preview.from_author') %></p>
+  <p><%= I18n.t('articles.right_container.preview.text') %></p>
+  <%= render 'share/social_links' %>
+  <div class='search-article'>
+    <%= form_for :search, url: articles_path, method: :get, html: { id: 'search-form' } do |f| %>
+      <%= f.text_field :text, placeholder: I18n.t('articles.right_container.search_placeholder') %>
+    <% end %>
+  </div>
+  <div class='subscribe-for-newsletter'>
+    <h2><%= I18n.t('subscriber.call_to_subscribe') %></h2>
+    <%= form_for @subscriber do |f| %>
+      <%= f.text_field :email %>
+      <%= f.label :email, I18n.t('subscriber.your_email') %>
+      <%= f.text_field :name %>
+      <%= f.label :name, I18n.t('subscriber.your_name') %>
+      <%= f.submit I18n.t('subscriber.submit') %>
+    <% end %>
+  </div>
+  <h3><%= I18n.t('articles.right_container.categories') %></h3>
+  <% @categories.each do |category| %>
+    <p><%= link_to category.title, category_articles_path(category) %></p>
+  <% end %>
+</div>

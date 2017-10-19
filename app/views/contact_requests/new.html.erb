@@ -1,0 +1,42 @@
+<div class='container center container-wrap-request'>
+  <div>
+    <div>
+      <h1>Контакты</h1>
+      <h4>Звоните на любой, удобный для вас, номер</h4>
+      <h4>+38 063 267 41 23</h4>
+      <h4>+38 096 515 72 98</h4>
+      <h4>+38 099 437 33 44</h4>
+      <h4>Или пишите нам на почту:</h4>
+      <h4>office@lumina.dp.ua</h4>
+      <h4>Если вы хотите что-то спросить, свяжитесь с нами. Мы хотели бы услышать от вас!</h4>
+    </div>
+  </div>
+
+  <div class='form-wrap'>
+    <%= form_for @contact_request, url: {action: 'create'} do |f| %>
+      <p>
+        <%= f.label :name, 'Ваше имя (обязательно)' %>
+        <%= f.text_field :name %>
+      </p>
+
+      <p>
+        <%= f.label :email, 'Ваш email (обязательно)' %>
+        <%= f.text_field :email %>
+      </p>
+
+      <p>
+        <%= f.label :subject, 'Заголовок' %>
+        <%= f.text_field :subject %>
+      </p>
+
+      <p>
+        <%= f.label :body, 'Сообщение' %>
+        <%= f.text_area :body %>
+      </p>
+
+      <p>
+        <%= f.submit I18n.t('button.send') %>
+      </p>
+    <% end %>
+  </div>
+</div>

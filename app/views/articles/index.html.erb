@@ -1,0 +1,28 @@
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
+<div class='container center'>
+  <div class='carousel-articles'>
+    <% @articles.each do |article| %>
+      <div class='col-xs-4'>
+        <%= link_to article_path(article) do %>
+          <%= image_tag(article.small_main_image.thumb, class: 'main-image-article') %>
+          <div class=''>
+            <h3 class='article-title'>
+              <%= article.title %>
+            </h3>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-8 col-xs-12 container-left' data-articles-date='all-articles'>
+      <% @articles.each do |article| %>
+        <%= render 'article', article: article %>
+      <% end %>
+    </div>
+    <%= render 'right_container' %>
+  </div>
+</div>

@@ -6,9 +6,74 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
   </head>
 
   <body>
-    <%= yield %>
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %> center">
+        <%= value %>
+      </div>
+    <% end %>
+    <div class='wrap'>
+      <div class='inner'>
+        <header class='site-header'>
+          <div class='site-header-main'>
+            <div class='header-image'>
+              <%= link_to root_path do %>
+                <%= image_tag 'new_logo.png' %>
+              <% end %>
+            </div>
+            <div class='site-header-menu'>
+              <nav class='main-navigation'>
+                <div class='menu-main-menu-container'>
+                  <ul class='primary-menu'>
+                    <li>
+                      <%= link_to 'Главная', root_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'О нас', about_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Услуги', services_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Портфолио', categories_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Блог', articles_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Контакты', new_contact_request_path %>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <div class='content'>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <footer class='site-footer'>
+      <div class='container'>
+        <div class='row'>
+          <h2 class='widget-title'>Cледите за нами в Instagram</h2>
+          <% @photos.each do |photo| %>
+            <div class='col-md-2 col-sm-4 col-xs-6 footer-image-instagram'>
+              <%= link_to photo['link'], target: :_blank do %>
+                <%= image_tag photo['images']['low_resolution']['url'] %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= render 'share/social_links' %>
+    </footer>
+    <a href='#' class='topbutton'></a>
   </body>
 </html>
