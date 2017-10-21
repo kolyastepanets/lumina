@@ -56,6 +56,11 @@
             <section class='widget widget_text'>
               <h2 class='widget-title'>Cледите за нами в Instagram</h2>
               <div class='textwidget'>
+                <% @photos.each do |photo| %>
+                  <%= link_to photo['link'], target: :_blank do %>
+                    <%= image_tag photo['images']['thumbnail']['url'] %>
+                  <% end %>
+                <% end %>
               </div>
             </section>
           </div>
@@ -69,7 +74,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to 'https://instagram.com/lu' do %>
+                <%= link_to 'https://www.instagram.com/lumina.decor/' do %>
                   <i class="fa fa-instagram fa-1x"></i>
                 <% end %>
               </li>

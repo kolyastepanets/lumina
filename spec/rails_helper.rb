@@ -12,6 +12,9 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include FactoryGirl::Syntax::Methods
+  config.before(:each, type: :controller) do
+    allow_any_instance_of(ApplicationController).to receive(:instagram_photos).and_return(true)
+  end
 end
 
 Shoulda::Matchers.configure do |config|
