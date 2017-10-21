@@ -108,6 +108,7 @@ body {
   order: 1;
   display: flex;
   width: 100%;
+  max-width: 1300px;
 }
 .social-widget-area {
   width: 100%;
@@ -161,6 +162,10 @@ body {
       color: #ddd2cd;
     }
   }
+}
+.textwidget {
+  display: flex;
+  justify-content: space-between;
 }
 .menu-social-media-container {
   margin: 0 auto;

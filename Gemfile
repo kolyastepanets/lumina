@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'font-awesome-rails'
+gem 'figaro'
+gem 'instagram-continued', require: 'instagram'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'
