@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   def instagram_photos
     response = Instagram.client(access_token: Figaro.env.instagram_access_token)
-    @photos ||= response.user_recent_media(Figaro.env.lumina_instagram_id, count: 8)
+    @photos = Rails.cache.fetch('instagram_photos', expires_in: 2.days) do
+      response.user_recent_media(Figaro.env.lumina_instagram_id, count: 8)
+    end
   end
 end
