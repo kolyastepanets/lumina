@@ -33,6 +33,8 @@ group :development do
   gem 'bullet'
   gem 'listen'
   gem 'rubocop', require: false
+  gem 'brakeman', require: false
+  gem 'rubycritic', require: false
   gem 'overcommit'
   gem 'rails_best_practices'
   gem 'traceroute'
