@@ -59,7 +59,6 @@ body {
   width: 100%;
 }
 .main-navigation {
-  width: 1000px;
   margin: 0 auto !important;
   border-bottom: 1px solid black;
   ul {
@@ -126,18 +125,28 @@ body {
   padding: 0px;
 }
 .widget-title {
-  margin-bottom: .875em;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   letter-spacing: 2.6px;
   line-height: 1.3125;
-  margin: 0 0 1.75em;
+  margin: 1em 0 1.75em;
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
 }
+.footer-image-instagram {
+  margin-top: 10px;
+  img {
+    width: 220px;
+    height: 220px;
+    @media (min-width: 992px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
 .social-navigation {
-  margin: 0px auto 10px auto;
+  margin: 20px auto 10px auto;
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
