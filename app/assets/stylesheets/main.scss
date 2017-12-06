@@ -106,6 +106,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 0px 0px 1.75em 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .footersocial {
   margin: 30px auto 0px auto;
