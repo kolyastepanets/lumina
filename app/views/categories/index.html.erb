@@ -3,6 +3,10 @@
     <% @categories.each do |category| %>
       <div class='col-md-2 col-sm-4 col-xs-6'>
         <%= category.title %>
+        <% category.albulms.each do |albulm| %>
+          <%= image_tag albulm.title_photo %>
+          <%= albulm.title %>
+        <% end %>
       </div>
     <% end %>
   </div>

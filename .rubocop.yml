@@ -13,3 +13,6 @@ AllCops:
     - config/environments/*
     - config/initializers/*
     - db/seeds.rb
+Style/BlockLength:
+  Exclude:
+    - 'app/admin/*.rb'

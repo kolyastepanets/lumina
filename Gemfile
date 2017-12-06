@@ -24,6 +24,8 @@ gem 'activeadmin'
 gem 'devise'
 gem 'friendly_id', '~> 5.1.0'
 gem 'active_skin'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'
