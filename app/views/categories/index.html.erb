@@ -1,9 +1,11 @@
 <div class='container'>
   <div class='row'>
     <% @categories.each do |category| %>
-      <%= category.title %>
-      <div class='col-md-2 col-sm-4 col-xs-6 albulm-wrap'>
-        <% category.albulms.each do |albulm| %>
+      <span>
+        <%= category.title %>
+      </span>
+      <% category.albulms.each do |albulm| %>
+        <div class='col-md-2 col-sm-4 col-xs-6 albulm-wrap'>
           <%= link_to albulm_path(albulm) do %>
             <%= image_tag albulm.title_photo %>
             <div class='albulm-title-wrap non-visibility'>

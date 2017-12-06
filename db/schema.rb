@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 20171126150926) do
 
   create_table "albulms", force: :cascade do |t|
     t.string "title"
+    t.text "description"
     t.string "title_photo"
     t.string "slug"
+    t.json "images"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,14 +76,5 @@ ActiveRecord::Schema.define(version: 20171126150926) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "images", force: :cascade do |t|
-    t.bigint "albulm_id"
-    t.string "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["albulm_id"], name: "index_images_on_albulm_id"
-  end
-
   add_foreign_key "albulms", "categories"
-  add_foreign_key "images", "albulms"
 end

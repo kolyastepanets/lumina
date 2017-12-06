@@ -1,0 +1,13 @@
+<div class='container'>
+  <div class='row'>
+    <h1 class='albulm-title'>
+      <%= @albulm.title %>
+    </h1>
+    <p class='albulm-description'>
+      <%= @albulm.description %>
+    </p>
+    <% @albulm.images.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
+  </div>
+</div>

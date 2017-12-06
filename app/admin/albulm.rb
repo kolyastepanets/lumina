@@ -3,6 +3,10 @@ ActiveAdmin.register Albulm do
     def permitted_params
       params.permit!
     end
+
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
   end
 
   index do
@@ -20,19 +24,27 @@ ActiveAdmin.register Albulm do
       row :title_photo do
         image_tag albulm.title_photo
       end
-      rows :title, :slug, :category
+      rows :title, :slug, :category, :description
+      row :images do
+        ul do
+          albulm.images.each do |image|
+            li do
+              image_tag(image.url)
+            end
+          end
+        end
+      end
     end
   end
 
-  form do |f|
+  form html: { multipart: true } do |f|
     f.inputs do
       f.input :title
+      f.input :slug
       f.input :title_photo, as: :file
+      f.input :description
       f.input :category
-
-      f.has_many :images do |p|
-        p.input :file
-      end
+      f.input :images, as: :file, input_html: { multiple: true }
     end
 
     f.actions
