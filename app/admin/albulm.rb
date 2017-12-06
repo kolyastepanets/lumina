@@ -28,6 +28,7 @@ ActiveAdmin.register Albulm do
     f.inputs do
       f.input :title
       f.input :title_photo, as: :file
+      f.input :category
 
       f.has_many :images do |p|
         p.input :file

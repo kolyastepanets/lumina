@@ -4,6 +4,7 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
+  height: 100%;
 }
 body {
   background-color: rgb(255, 255, 255);
@@ -14,10 +15,27 @@ body {
   font-size: 13px;
   line-height: 1.75;
   margin: 0px;
+  height: 100%;
 }
+.non-visibility {
+  opacity: 0;
+}
+.light-visibility {
+  opacity: 0.2;
+}
+
 .wrap {
   box-sizing: border-box;
   display: block;
+  min-height: 100%;
+  margin-bottom: -300px;
+}
+.wrap:after {
+  content: "";
+  display: block;
+}
+.wrap:after {
+  height: 300px;
 }
 .inner {
   margin: 0 auto;
@@ -108,10 +126,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 0px 0px 1.75em 0px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  height: 300px;
 }
 .footersocial {
   margin: 30px auto 0px auto;
