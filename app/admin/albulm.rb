@@ -7,6 +7,35 @@ ActiveAdmin.register Albulm do
     def find_resource
       scoped_collection.friendly.find(params[:id])
     end
+
+    def create
+      @albulm = Albulm.new(permitted_params[:albulm].except('images_attributes'))
+
+      if @albulm.save
+        create_images
+        redirect_to admin_albulms_path
+      else
+        render :new
+      end
+    end
+
+    def update
+      @albulm = Albulm.friendly.find(params[:id])
+
+      if @albulm.update(permitted_params[:albulm].except('images_attributes'))
+        create_images
+        redirect_to admin_albulms_path
+      else
+        render :new
+      end
+    end
+
+    def create_images
+      return unless permitted_params[:albulm][:images_attributes]
+      permitted_params[:albulm][:images_attributes][:file].each do |file|
+        @albulm.images.create!(file: file, albulm_id: @albulm.id)
+      end
+    end
   end
 
   index do
@@ -29,7 +58,7 @@ ActiveAdmin.register Albulm do
         ul do
           albulm.images.each do |image|
             li do
-              image_tag(image.url)
+              image_tag(image.file.url)
             end
           end
         end
@@ -44,7 +73,23 @@ ActiveAdmin.register Albulm do
       f.input :title_photo, as: :file
       f.input :description
       f.input :category
-      f.input :images, as: :file, input_html: { multiple: true }
+      f.label 'Add images'
+      f.fields_for :images_attributes do |image_fields|
+        image_fields.file_field :file, multiple: true
+      end
+      resource.images.each do |image|
+        li do
+          div do
+            image_tag(image.file.url)
+          end
+          div do
+            link_to 'Delete image',
+                    admin_image_path(image, albulm_id: resource.id),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' }
+          end
+        end
+      end
     end
 
     f.actions
