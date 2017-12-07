@@ -7,4 +7,5 @@ ActiveAdmin.setup do |config|
   config.batch_actions = true
   config.localize_format = :long
   config.comments = false
+  config.root_to = 'admin/albulms#index'
 end

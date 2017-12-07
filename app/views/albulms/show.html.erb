@@ -7,7 +7,9 @@
       <%= @albulm.description %>
     </p>
     <% @albulm.images.each do |image| %>
-      <%= image_tag image %>
+      <div class='col-xs-6'>
+        <%= image_tag image %>
+      </div>
     <% end %>
   </div>
 </div>

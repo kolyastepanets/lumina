@@ -1,19 +1,19 @@
 <div class='container'>
   <div class='row'>
     <% @categories.each do |category| %>
-      <span>
+      <div>
         <%= category.title %>
-      </span>
-      <% category.albulms.each do |albulm| %>
-        <div class='col-md-2 col-sm-4 col-xs-6 albulm-wrap'>
-          <%= link_to albulm_path(albulm) do %>
-            <%= image_tag albulm.title_photo %>
-            <div class='albulm-title-wrap non-visibility'>
-              <h3>
-                <span><%= albulm.title %></span>
-              </h3>
-            </div>
-          <% end %>
+      </div>
+    <% end %>
+    <% @albulms.each do |albulm| %>
+      <div class='col-md-2 col-sm-4 col-xs-6 albulm-wrap'>
+        <%= link_to albulm_path(albulm) do %>
+          <%= image_tag albulm.title_photo %>
+          <div class='albulm-title-wrap non-visibility'>
+            <h3>
+              <span><%= albulm.title %></span>
+            </h3>
+          </div>
         <% end %>
       </div>
     <% end %>

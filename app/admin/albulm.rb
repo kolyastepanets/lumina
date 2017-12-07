@@ -16,7 +16,7 @@ ActiveAdmin.register Albulm do
     column :title
     column :slug
     column :category
-    actions name: 'Actions', defaults: true
+    actions
   end
 
   show do |albulm|

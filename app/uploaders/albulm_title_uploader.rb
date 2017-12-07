@@ -1,3 +1,3 @@
 class AlbulmTitleUploader < BaseUploader
-  process resize_to_fill: [230, 230]
+  process resize_to_fit: [230, 230]
 end
