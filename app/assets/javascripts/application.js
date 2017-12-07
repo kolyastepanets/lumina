@@ -17,4 +17,5 @@
 //= require jquery-ui
 //= require rails-ujs
 //= require turbolinks
+//= require isotope.min
 //= require_tree .
