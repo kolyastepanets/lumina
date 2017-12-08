@@ -1,6 +1,13 @@
 FactoryGirl.define do
   factory :albulm do
-    title 'MyString'
-    category nil
+    title { Faker::Lorem.word }
+    slug { Faker::Lorem.word }
+    description { Faker::Lorem.paragraph }
+    title_photo do
+      Rack::Test::UploadedFile.new(
+        File.join(Rails.root, 'spec', 'support', 'images', 'puppy.jpg'), 'image/jpg'
+      )
+    end
+    association :category
   end
 end
