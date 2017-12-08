@@ -3,6 +3,7 @@
   height: 230px;
   padding: 0;
   margin: 10px;
+  text-align: center;
 }
 .albulm-title-wrap {
   padding: 0px 20px;
@@ -34,23 +35,6 @@
   padding: 20px;
   div {
     text-align: center;
-  }
-}
-.category-link {
-  text-transform: uppercase;
-  padding: 10px 0px;
-  border-radius: 0px;
-  font-size: 11.5px;
-  font-weight: 300;
-  margin: 0px 40px;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1.8px;
-  color: #384151;
-  &:hover {
-    text-decoration: none;
-    border-color: #384151;
-    border-bottom: 1px solid #424040;
   }
 }
 .grid-item {
