@@ -1,0 +1,30 @@
+<div class='container'>
+  <h4 class='center'>Если вы хотите что-то спросить, свяжитесь с нами. Мы хотели бы услышать от вас!</h4>
+  <div class='form-wrap'>
+    <%= form_for @contact_request, url: {action: "create"} do |f| %>
+      <p>
+        <%= f.label :name, 'Ваше имя' %>
+        <%= f.text_field :name %>
+      </p>
+
+      <p>
+        <%= f.label :email, 'Ваш email' %>
+        <%= f.text_field :email %>
+      </p>
+
+      <p>
+        <%= f.label :subject, 'Заголовок' %>
+        <%= f.text_field :subject %>
+      </p>
+
+      <p>
+        <%= f.label :body, 'Сообщение' %>
+        <%= f.text_area :body %>
+      </p>
+
+      <p>
+        <%= f.submit 'Send' %>
+      </p>
+    <% end %>
+  </div>
+</div>
