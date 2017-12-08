@@ -1,13 +1,13 @@
 <div class='container'>
   <div class='row links-to-category'>
-    <div class='col-xs-4'>
+    <div class='col-xs-3'>
       <a href='#' class='decorate-link' data-show='all'>
         Показать все
       </a>
     </div>
     <% @categories.each do |category| %>
-      <div class='col-xs-4'>
-        <a href='#' class='decorate-link' data-show="<%= category.title %>">
+      <div class='col-xs-3'>
+        <a href='#' class='decorate-link' data-show="<%= category.english_title %>">
           <%= category.title %>
         </a>
       </div>
@@ -15,7 +15,7 @@
   </div>
   <div class='row grid'>
     <% @albulms.each do |albulm| %>
-      <div class="col-md-4 col-xs-6 albulm-wrap grid-item <%= albulm.category.title %> all">
+      <div class="col-md-4 col-xs-6 albulm-wrap grid-item <%= albulm.category.english_title %> all">
         <%= link_to albulm_path(albulm) do %>
           <%= image_tag albulm.title_photo %>
           <div class='albulm-title-wrap non-visibility'>

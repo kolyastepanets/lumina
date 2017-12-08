@@ -536,6 +536,7 @@ GEM
     tilt (2.0.8)
     traceroute (0.5.0)
       rails (>= 3.0.0)
+    translit (0.1.5)
     trollop (2.1.2)
     tty-which (0.3.0)
     turbolinks (5.0.1)
@@ -604,6 +605,7 @@ DEPENDENCIES
   selenium-webdriver
   shoulda-matchers!
   traceroute
+  translit
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
 

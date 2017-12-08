@@ -27,6 +27,7 @@ gem 'active_skin'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'fog'
+gem 'translit'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'
