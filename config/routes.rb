@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :albulms, only: :show
   resources :contact_requests, path: 'contact', only: %i[new create]
   get 'about', to: 'pages#about'
+  get 'services', to: 'pages#services'
 end
