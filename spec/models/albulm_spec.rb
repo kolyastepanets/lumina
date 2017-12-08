@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Albulm, type: :model do
   context 'Association' do
     it { should belong_to(:category) }
-    it { should have_many(:images) }
+    it { should have_many(:images).dependent(:destroy) }
   end
 
   context 'Validation' do
