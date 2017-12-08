@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :categories, only: :index, path: :portfolio
   resources :albulms, only: :show
+  get 'about', to: 'pages#about'
 end
