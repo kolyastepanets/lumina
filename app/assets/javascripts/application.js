@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require active_admin/base
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
 //= require rails-ujs
 //= require turbolinks
+//= require isotope.min
 //= require_tree .

@@ -22,9 +22,8 @@
               <nav class='main-navigation'>
                 <div class='menu-main-menu-container'>
                   <ul class='primary-menu'>
-<!--
                     <li>
-                      <a>Главная</a>
+                      <%= link_to 'Главная', root_path %>
                     </li>
                     <li>
                       <a>О нас</a>
@@ -33,7 +32,7 @@
                       <a>Услуги</a>
                     </li>
                     <li>
-                      <a>Портфолио</a>
+                      <%= link_to 'Портфолио', categories_path %>
                     </li>
                     <li>
                       <a>Блог</a>
@@ -41,13 +40,9 @@
                     <li>
                       <a>Контакты</a>
                     </li>
- -->
                   </ul>
                 </div>
               </nav>
-              <p style='text-align: center; margin-top: 50px;'>
-                Сайт временно находится в стадии разработки. Спасибо за понимание!
-              </p>
             </div>
           </div>
         </header>
@@ -55,37 +50,37 @@
           <%= yield %>
         </div>
       </div>
-      <footer class='site-footer'>
-        <div class='container'>
-          <div class='row'>
-            <h2 class='widget-title'>Cледите за нами в Instagram</h2>
-            <% @photos.each do |photo| %>
-              <div class='col-md-2 col-sm-4 col-xs-6 footer-image-instagram'>
-                <%= link_to photo['link'], target: :_blank do %>
-                  <%= image_tag photo['images']['low_resolution']['url'] %>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <nav class='social-navigation'>
-          <div class='menu-social-media-container'>
-            <ul class='social-links-menu'>
-              <li>
-                <%= link_to 'https://facebook.com/lumina.creative.group/', target: :_blank do %>
-                  <i class="fa fa-facebook fa-1x"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to 'https://www.instagram.com/lumina.decor/', target: :_blank do %>
-                  <i class="fa fa-instagram fa-1x"></i>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </footer>
-      <a href='#' class='topbutton'></a>
     </div>
+    <footer class='site-footer'>
+      <div class='container'>
+        <div class='row'>
+          <h2 class='widget-title'>Cледите за нами в Instagram</h2>
+          <% @photos.each do |photo| %>
+            <div class='col-md-2 col-sm-4 col-xs-6 footer-image-instagram'>
+              <%= link_to photo['link'], target: :_blank do %>
+                <%= image_tag photo['images']['low_resolution']['url'] %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <nav class='social-navigation'>
+        <div class='menu-social-media-container'>
+          <ul class='social-links-menu'>
+            <li>
+              <%= link_to 'https://facebook.com/lumina.creative.group/', target: :_blank do %>
+                <i class="fa fa-facebook fa-1x"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to 'https://www.instagram.com/lumina.decor/', target: :_blank do %>
+                <i class="fa fa-instagram fa-1x"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+    <a href='#' class='topbutton'></a>
   </body>
 </html>

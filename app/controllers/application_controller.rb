@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
       response.user_recent_media(Figaro.env.lumina_instagram_id, count: 6)
     end
   end
+
+  def after_sign_in_path_for(_resource)
+    admin_albulms_path
+  end
+
+  def after_sign_out_path_for(_resource)
+    main_app.root_path
+  end
 end
