@@ -14,8 +14,8 @@
       <%= @albulm.description %>
     </p>
     <% @albulm.images.each do |image| %>
-      <div class='col-xs-6 center albulm-image'>
-        <%= image_tag image.file %>
+      <div class='col-xs-6 center albulm-image-wrap'>
+        <%= image_tag(image.file, class: 'albulm-image') %>
       </div>
     <% end %>
   </div>

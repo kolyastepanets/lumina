@@ -1,3 +1,10 @@
+.container-about-us {
+  h3 {
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+  }
+}
 .image-about-us {
   @media (max-width: 991px) {
     width: 720px;
