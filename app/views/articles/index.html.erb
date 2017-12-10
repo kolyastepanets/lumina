@@ -1,0 +1,47 @@
+<div class='container center'>
+  <div class='carousel-articles'>
+    <% @articles.each do |article| %>
+      <div class='col-xs-4'>
+        <%= link_to article_path(article) do %>
+          <%= image_tag(article.main_image.small_preview, class: 'main-image-article') %>
+          <div class=''>
+            <h3 class='article-title'>
+              <%= article.title %>
+            </h3>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class='row'>
+    <div class='col-xs-8 container-left' data-articles-date='all-articles'>
+      <% @articles.each do |article| %>
+        <%= render 'articles_list', article: article %>
+      <% end %>
+    </div>
+
+    <% @grouped_articles.keys.each do |date| %>
+      <div class='col-xs-8 container-left hidden' data-articles-date="<%= date %>">
+        <p>Статьи за <%= month_russian_name(date) %></p>
+        <% @grouped_articles[date].each do |article| %>
+          <%= render 'articles_list', article: article %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class='col-xs-4 container-right'>
+      <%= image_tag 'https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/lili1.jpg', class: 'image-lili' %>
+      <p>От Лили</p>
+      <p>Добро пожаловать в блог Lumina! Здесь мы будем держать вас в курсе наших текущих работ и что вдохновляет нас. Не стесняйтесь комментировать, спрашивать или делиться. Мы хотели бы услышать от вас!</p>
+      <%= render 'share/social_links' %>
+      <h3>Категории</h3>
+      <% @categories.each do |category| %>
+        <p><%= category.title %></p>
+      <% end %>
+      <h3>Архив</h3>
+        <% @grouped_articles.keys.each do |date| %>
+          <p><a href='#' data-link-articles-date="<%= date %>"><%= month_russian_name(date) %></a></p>
+        <% end %>
+      </div>
+  </div>
+</div>

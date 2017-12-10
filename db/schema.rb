@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171208120757) do
+ActiveRecord::Schema.define(version: 20171210123430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,11 +57,32 @@ ActiveRecord::Schema.define(version: 20171208120757) do
     t.index ["category_id"], name: "index_albulms_on_category_id"
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "main_image"
+    t.string "slug"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_articles_on_category_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "english_title"
+    t.integer "classification"
+  end
+
+  create_table "category_articles", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_category_articles_on_article_id"
+    t.index ["category_id"], name: "index_category_articles_on_category_id"
   end
 
   create_table "contact_requests", force: :cascade do |t|
@@ -94,5 +115,8 @@ ActiveRecord::Schema.define(version: 20171208120757) do
   end
 
   add_foreign_key "albulms", "categories"
+  add_foreign_key "articles", "categories"
+  add_foreign_key "category_articles", "articles"
+  add_foreign_key "category_articles", "categories"
   add_foreign_key "images", "albulms"
 end

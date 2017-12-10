@@ -1,0 +1,16 @@
+<div class='col-xs-12'>
+  <div class=''>
+    <p class='article-category-list'>
+      <% article.categories.each do |category| %>
+        <span><%= category.title %> <%= article.categories.last == category ? '' : '/' %></span>
+      <% end %>
+    </p>
+    <h3 class='article-title'>
+      <%= link_to article.title, article_path(article) %>
+    </h3>
+    <p><%= article.created_at.strftime('%d.%m.%Y') %></p>
+  </div>
+  <%= link_to article_path(article) do %>
+    <%= image_tag article.main_image.big_preview %>
+  <% end %>
+</div>

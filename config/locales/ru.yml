@@ -1,0 +1,13 @@
+ru:
+  january: 'Январь %{year}'
+  february: 'Февраль %{year}'
+  march: 'Март %{year}'
+  april: 'Апрель %{year}'
+  may: 'Май %{year}'
+  june: 'Июнь %{year}'
+  july: 'Июль %{year}'
+  august: 'Август %{year}'
+  september: 'Сентябрь %{year}'
+  october: 'Октябрь %{year}'
+  november: 'Ноябрь %{year}'
+  december: 'Декабрь %{year}'

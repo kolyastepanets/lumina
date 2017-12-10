@@ -1,12 +1,17 @@
-ActiveAdmin.register Category do
+ActiveAdmin.register Category, as: 'Blog Categories' do
   controller do
+    def scoped_collection
+      Category.blog
+    end
+
     def permitted_params
       params.permit!
     end
   end
 
-  after_save do |category|
-    category.update(english_title: Translit.convert(category.title, :english).gsub(/(\s+|')/, ''))
+  index do
+    column :title
+    actions
   end
 
   show do
@@ -18,6 +23,7 @@ ActiveAdmin.register Category do
   form do |f|
     f.inputs do
       f.input :title
+      f.input :classification, input_html: { value: 'blog' }, as: :hidden
     end
 
     f.actions

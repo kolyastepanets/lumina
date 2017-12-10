@@ -18,4 +18,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require isotope.min
+//= require slick.min
 //= require_tree .

@@ -40,7 +40,7 @@
                       <%= link_to 'Портфолио', categories_path %>
                     </li>
                     <li>
-                      <a>Блог</a>
+                      <%= link_to 'Блог', articles_path %>
                     </li>
                     <li>
                       <%= link_to 'Контакты', new_contact_request_path %>
@@ -69,22 +69,7 @@
           <% end %>
         </div>
       </div>
-      <nav class='social-navigation'>
-        <div class='menu-social-media-container'>
-          <ul class='social-links-menu'>
-            <li>
-              <%= link_to 'https://facebook.com/lumina.creative.group/', target: :_blank do %>
-                <i class="fa fa-facebook fa-1x"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to 'https://www.instagram.com/lumina.decor/', target: :_blank do %>
-                <i class="fa fa-instagram fa-1x"></i>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <%= render 'share/social_links' %>
     </footer>
     <a href='#' class='topbutton'></a>
   </body>
