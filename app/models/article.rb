@@ -1,5 +1,8 @@
 class Article < ApplicationRecord
   extend FriendlyId
+  include PgSearch
+
+  pg_search_scope :search_in_articles, against: %i[title description]
   friendly_id :slug, use: :slugged
   mount_uploader :main_image, ArticleMainImageUploader
 
