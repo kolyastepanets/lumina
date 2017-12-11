@@ -7,6 +7,10 @@ ActiveAdmin.register Category, as: 'Blog Categories' do
     def permitted_params
       params.permit!
     end
+
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
   end
 
   index do
@@ -24,7 +28,7 @@ ActiveAdmin.register Category, as: 'Blog Categories' do
   form do |f|
     f.inputs do
       f.input :title
-      f.input slug
+      f.input :slug
       f.input :classification, input_html: { value: 'blog' }, as: :hidden
     end
 

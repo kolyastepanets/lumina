@@ -14,6 +14,11 @@
 }
 .article-title {
   text-decoration: none;
+  color: #384151;
+  &:hover {
+    color: #ddd2cd;
+    text-decoration: none;
+  }
   a {
     color: #384151;
     &:hover {
@@ -26,6 +31,13 @@
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: 3px;
+  a {
+    color: #384151;
+    &:hover {
+      color: #ddd2cd;
+      text-decoration: none;
+    }
+  }
 }
 .slick-slide {
   a {
@@ -39,4 +51,96 @@
 }
 .container-left, .container-right {
   padding-top: 50px;
+}
+.container-right {
+  a {
+    color: #384151;
+    &:hover {
+      color: #ddd2cd;
+      text-decoration: none;
+    }
+  } 
+}
+.article-truncated-description {
+  width: 650px;
+  margin: 30px auto;
+}
+.read-more-link-wrap {
+  width: 650px;
+  text-align: left;
+  margin: 0 auto;
+}
+.read-more-link {
+  color: #384151;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #424040;
+  padding: 0px;
+  font-weight: bold;
+  &:hover {
+    color: #ddd2cd;
+    text-decoration: none;
+  }
+}
+.content-footer {
+  width: 650px;
+  display: flex;
+  align-items: center;
+  margin: 30px auto 60px auto;
+  border-bottom: 1px solid black;
+}
+.leave-comment {
+  width: 50%;
+  display: inline-block;
+  a {
+    color: #384151;
+    font-family: 'Karla', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    outline: 0;
+    display: block;
+    float: right;
+    &:hover {
+      color: #ddd2cd;
+      text-decoration: none;
+    }
+  }
+}
+.divider {
+  border-left: 1px solid #424040;
+  width: 1px;
+  height: 50px;
+  display: inline-block;
+  margin: 0 10px;
+}
+.share-social-links {
+  width: 50%;
+  display: inline-block;
+  ul {
+    list-style: none;
+    outline: 0;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+    float: left;
+  }
+  li {
+    float: none;
+    outline: 0;
+    display: inline-block;
+  }
+  a {
+    border: none;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    width: 20px;
+    outline: 0;
+    color: #384151;
+    &:hover {
+      color: #ddd2cd;
+    }
+  }
 }

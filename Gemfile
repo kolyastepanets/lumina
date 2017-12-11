@@ -28,6 +28,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'fog'
 gem 'translit'
+gem 'select2-rails'
+gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :article do
-    title 'MyString'
-    slug 'MyString'
-    description 'MyString'
+    title { Faker::Bank.name }
+    slug { Faker::Lorem.word }
+    description { Faker::Lorem.paragraph }
     main_image do
       Rack::Test::UploadedFile.new(
         File.join(Rails.root, 'spec', 'support', 'images', "nature#{rand(11)}.jpg"), 'image/jpg'

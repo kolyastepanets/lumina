@@ -7,6 +7,10 @@ ActiveAdmin.register Category, as: 'Portfolio Categories' do
     def permitted_params
       params.permit!
     end
+
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
   end
 
   after_save do |category|

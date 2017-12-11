@@ -2,7 +2,8 @@
   <div class=''>
     <p class='article-category-list'>
       <% article.categories.each do |category| %>
-        <span><%= category.title %> <%= article.categories.last == category ? '' : '/' %></span>
+        <span><%= link_to category.title, category_articles_path(category) %></span>
+        <span><%= article.categories.last == category ? '' : '/' %></span>
       <% end %>
     </p>
     <h3 class='article-title'>
@@ -13,4 +14,31 @@
   <%= link_to article_path(article) do %>
     <%= image_tag article.main_image.big_preview %>
   <% end %>
+  <div class='article-truncated-description'>
+    <%= truncate(article.description, length: 300, omission: '...') %>
+  </div>
+  <div class='read-more-link-wrap'>
+    <%= link_to 'Читать далее', article_path(article), class: 'read-more-link' %>
+  </div>
+  <div class='content-footer'>
+    <div class='leave-comment'>
+      <%= link_to 'Оставить комментарий', '#' %>
+    </div>
+    <div class='divider'>
+    </div>
+    <div class='share-social-links'>
+      <ul>
+        <li>
+          <%= link_to 'https://facebook.com/lumina.creative.group/', target: :_blank do %>
+            <i class="fa fa-facebook fa-1x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'https://www.instagram.com/lumina.decor/', target: :_blank do %>
+            <i class="fa fa-instagram fa-1x"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

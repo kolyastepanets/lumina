@@ -1,18 +1,5 @@
 <div class='container center'>
-  <div class='carousel-articles'>
-    <% @articles.each do |article| %>
-      <div class='col-xs-4'>
-        <%= link_to article_path(article) do %>
-          <%= image_tag(article.main_image.small_preview, class: 'main-image-article') %>
-          <div class=''>
-            <h3 class='article-title'>
-              <%= article.title %>
-            </h3>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'carousel' %>
   <div class='row'>
     <div class='col-xs-8 container-left' data-articles-date='all-articles'>
       <% @articles.each do |article| %>

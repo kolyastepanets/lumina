@@ -9,6 +9,25 @@ ActiveAdmin.register Article do
     end
   end
 
+  index do
+    column :main_image do |article|
+      image_tag article.main_image.url
+    end
+    column :title
+    column :slug
+    column :description
+    column(:categories) do |article|
+      div do
+        article.categories.each do |category|
+          div do
+            category.title
+          end
+        end
+      end
+    end
+    actions
+  end
+
   show do |article|
     attributes_table do
       row :main_image do
@@ -25,9 +44,10 @@ ActiveAdmin.register Article do
       f.input :main_image, as: :file
       f.input :description
       f.input :categories,
-              as: :select,
-              input_html: { multiple: true, class: 'chosen-input' },
-              collection: Category.blog
+              as: :select2_multiple,
+              collection: Category.blog,
+              multiple: true,
+              input_html: { class: 'category-select', value: object.categories.pluck(:title) }
     end
 
     f.actions

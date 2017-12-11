@@ -3,8 +3,10 @@ $(document).on('turbolinks:load', function() {
     e.preventDefault();
     var id = $(this).attr('data-link-articles-date');
     $('[data-articles-date]').addClass('hidden');
+
     var elem = $('[data-articles-date=' + id + ']');
     elem.removeClass('hidden');
+
     $('html, body').animate({
       scrollTop: elem.offset().top
     }, 2000);
@@ -13,7 +15,7 @@ $(document).on('turbolinks:load', function() {
     $(this).addClass('active-link');
   });
 
-  $('.carousel-articles').slick({
+  $('.carousel-articles') .slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 3
