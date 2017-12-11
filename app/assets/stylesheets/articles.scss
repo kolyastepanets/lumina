@@ -48,6 +48,9 @@
 }
 .image-lili {
   width: 300px;
+  &:hover {
+    opacity: 1;
+  }
 }
 .container-left, .container-right {
   padding-top: 50px;
@@ -59,7 +62,7 @@
       color: #ddd2cd;
       text-decoration: none;
     }
-  } 
+  }
 }
 .article-truncated-description {
   width: 650px;
@@ -115,6 +118,9 @@
   display: inline-block;
   margin: 0 10px;
 }
+.social-share-button {
+  float: left;
+}
 .share-social-links {
   width: 50%;
   display: inline-block;
@@ -144,3 +150,7 @@
     }
   }
 }
+/*.social-share-button .ssb-facebook {
+  background-image: url('facebook.png') !important;
+}
+*/

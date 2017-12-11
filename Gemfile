@@ -30,6 +30,7 @@ gem 'fog'
 gem 'translit'
 gem 'select2-rails'
 gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
+gem 'social-share-button'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

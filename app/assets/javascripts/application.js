@@ -19,4 +19,5 @@
 //= require turbolinks
 //= require isotope.min
 //= require slick.min
+//= require social-share-button
 //= require_tree .

@@ -539,6 +539,8 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
     sexp_processor (4.10.0)
+    social-share-button (1.1.0)
+      coffee-rails
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -622,6 +624,7 @@ DEPENDENCIES
   select2-rails
   selenium-webdriver
   shoulda-matchers!
+  social-share-button
   traceroute
   translit
   turbolinks (~> 5)

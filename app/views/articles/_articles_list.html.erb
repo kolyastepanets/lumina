@@ -27,18 +27,7 @@
     <div class='divider'>
     </div>
     <div class='share-social-links'>
-      <ul>
-        <li>
-          <%= link_to 'https://facebook.com/lumina.creative.group/', target: :_blank do %>
-            <i class="fa fa-facebook fa-1x"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to 'https://www.instagram.com/lumina.decor/', target: :_blank do %>
-            <i class="fa fa-instagram fa-1x"></i>
-          <% end %>
-        </li>
-      </ul>
+      <%= social_share_button_tag(article.title, url: (request.base_url + article_path(article))) %>
     </div>
   </div>
 </div>
