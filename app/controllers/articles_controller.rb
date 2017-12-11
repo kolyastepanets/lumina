@@ -1,8 +1,5 @@
 class ArticlesController < ApplicationController
   def index
-    # @grouped_articles = Article.all.group_by do
-    #   |art| I18n.l(art.created_at, format: :month_and_year, locale: :ru)
-    # end
     if article_params['category_slug'].present?
       @category = Category.find_by(slug: article_params['category_slug'])
       @articles = Article.by_category(@category)
@@ -10,7 +7,6 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.all.includes(%i[category_articles categories])
       @categories = Category.blog
-      # @grouped_articles = Article.all.group_by { |art| art.created_at.strftime('%B%Y') }
     end
   end
 

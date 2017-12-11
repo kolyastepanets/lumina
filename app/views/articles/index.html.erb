@@ -20,15 +20,6 @@
       <% end %>
     </div>
 
-    <% @grouped_articles.keys.each do |date| %>
-      <div class='col-xs-8 container-left hidden' data-articles-date="<%= date %>">
-        <p>Статьи за <%= month_russian_name(date) %></p>
-        <% @grouped_articles[date].each do |article| %>
-          <%= render 'articles_list', article: article %>
-        <% end %>
-      </div>
-    <% end %>
-
     <div class='col-xs-4 container-right'>
       <%= image_tag 'https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/lili1.jpg', class: 'image-lili' %>
       <p>От Лили</p>
@@ -38,10 +29,5 @@
       <% @categories.each do |category| %>
         <p><%= link_to category.title, category_articles_path(category) %></p>
       <% end %>
-      <h3>Архив</h3>
-        <% @grouped_articles.keys.each do |date| %>
-          <p><a href='#' data-link-articles-date="<%= date %>"><%= month_russian_name(date) %></a></p>
-        <% end %>
-      </div>
   </div>
 </div>
