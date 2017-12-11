@@ -11,18 +11,20 @@ ActiveAdmin.register Category, as: 'Blog Categories' do
 
   index do
     column :title
+    column :slug
     actions
   end
 
   show do
     attributes_table do
-      rows :title
+      rows :title, :slug
     end
   end
 
   form do |f|
     f.inputs do
       f.input :title
+      f.input slug
       f.input :classification, input_html: { value: 'blog' }, as: :hidden
     end
 

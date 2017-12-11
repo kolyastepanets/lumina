@@ -36,7 +36,7 @@
       <%= render 'share/social_links' %>
       <h3>Категории</h3>
       <% @categories.each do |category| %>
-        <p><%= category.title %></p>
+        <p><%= link_to category.title, category_articles_path(category) %></p>
       <% end %>
       <h3>Архив</h3>
         <% @grouped_articles.keys.each do |date| %>

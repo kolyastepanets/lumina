@@ -18,11 +18,13 @@ FactoryGirl.define do
         'wedding'
       ].sample
     end
+    slug { Faker::Lorem.word }
     classification 'blog'
   end
 
   factory :category_for_portfolio, class: Category do
     title { %w[IDENTITIES ILLUSTRATION OTHER WEDDINGS].sample }
+    slug { Faker::Lorem.word }
     classification 'portfolio'
   end
 end

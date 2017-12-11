@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   root 'pages#landing'
 
   resources :categories, only: :index, path: :portfolio
-  namespace :blog do
-    resources :categories, only: :show
+  resources :articles, only: %i[show index], path: 'blog' do
+    collection do
+      get 'category/:category_slug', action: :index, as: 'category'
+    end
   end
-  resources :articles, only: %i[show index], path: 'blog'
   resources :albulms, only: :show
   resources :contact_requests, path: 'contact', only: %i[new create]
   get 'about', to: 'pages#about'
