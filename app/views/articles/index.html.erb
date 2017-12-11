@@ -1,13 +1,13 @@
 <div class='container center'>
   <%= render 'carousel' %>
   <div class='row'>
-    <div class='col-xs-8 container-left' data-articles-date='all-articles'>
+    <div class='col-md-8 col-xs-12 container-left' data-articles-date='all-articles'>
       <% @articles.each do |article| %>
         <%= render 'articles_list', article: article %>
       <% end %>
     </div>
 
-    <div class='col-xs-4 container-right'>
+    <div class='col-md-4 col-xs-12 container-right'>
       <%= image_tag 'https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/lili1.jpg', class: 'image-lili' %>
       <p>От Лили</p>
       <p>Добро пожаловать в блог Lumina! Здесь мы будем держать вас в курсе наших текущих работ и что вдохновляет нас. Не стесняйтесь комментировать, спрашивать или делиться. Мы хотели бы услышать от вас!</p>

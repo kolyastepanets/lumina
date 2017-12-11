@@ -48,6 +48,9 @@
 }
 .image-lili {
   width: 300px;
+  @media (min-width: 991px) and (max-width: 1199px) {
+    width: 220px;
+  }
   &:hover {
     opacity: 1;
   }
@@ -56,6 +59,9 @@
   padding-top: 50px;
 }
 .container-right {
+  @media (min-width: 991px) and (max-width: 1199px) {
+    padding: 50px;
+  }
   a {
     color: #384151;
     &:hover {
