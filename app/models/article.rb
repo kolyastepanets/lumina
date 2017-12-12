@@ -10,7 +10,7 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :categories, -> { blog }, through: :category_articles, source: :category
 
-  validates :title, :slug, :main_image, :description, presence: true
+  validates :title, :slug, :main_image, :description, :preview_description, presence: true
 
   scope :by_category, lambda { |category_id|
     joins(:categories).where(category_articles: { category_id: category_id })

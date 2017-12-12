@@ -1,11 +1,11 @@
-<div class='container center'>
+<div class='container'>
   <div class='row'>
     <div class='col-md-8 col-xs-12 container-left' data-articles-date='all-articles'>
-      <h1>
+      <h1 class='center'>
         <%= @article.title %>
       </h1>
-      <p class='albulm-description justify'>
-        <%= @article.description %>
+      <p class='albulm-description'>
+        <%= @article.description.html_safe %>
       </p>
       <%= render 'share_social', article: @article %>
       <div id='comments-section' class='left'>

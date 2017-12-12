@@ -15,6 +15,7 @@ ActiveAdmin.register Article do
     end
     column :title
     column :slug
+    column :preview_description
     column :description
     column(:categories) do |article|
       div do
@@ -33,7 +34,7 @@ ActiveAdmin.register Article do
       row :main_image do
         image_tag article.main_image
       end
-      rows :title, :slug, :category, :description
+      rows :title, :slug, :category, :preview_description, :description
       row 'Comments' do
         div do
           article.comments.each do |comment|
@@ -62,7 +63,8 @@ ActiveAdmin.register Article do
       f.input :title
       f.input :slug
       f.input :main_image, as: :file
-      f.input :description
+      f.input :preview_description
+      f.input :description, as: :ckeditor
       f.input :categories,
               as: :select2_multiple,
               collection: Category.blog,

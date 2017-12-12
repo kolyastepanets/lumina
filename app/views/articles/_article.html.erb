@@ -15,7 +15,7 @@
     <%= image_tag article.main_image.big_preview %>
   <% end %>
   <div class='article-truncated-description justify'>
-    <%= truncate(article.description, length: 300, omission: '...') %>
+    <%= article.preview_description %>
   </div>
   <div class='read-more-link-wrap'>
     <%= link_to 'Читать далее', article_path(article), class: 'read-more-link' %>
