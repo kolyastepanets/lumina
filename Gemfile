@@ -32,6 +32,7 @@ gem 'select2-rails'
 gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 gem 'social-share-button'
 gem 'pg_search'
+gem 'rails-i18n', '~> 5.0.0'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

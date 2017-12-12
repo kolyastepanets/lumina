@@ -70,6 +70,10 @@
     }
   }
 }
+.article-wrap {
+  width: 650px;
+  margin: 0 auto;
+}
 .article-truncated-description {
   width: 650px;
   margin: 30px auto;
@@ -92,7 +96,7 @@
   }
 }
 .content-footer {
-  width: 650px;
+  width: 100%;
   display: flex;
   align-items: center;
   margin: 30px auto 60px auto;
@@ -179,8 +183,20 @@
     outline: none;
   }
 }
-
 /*.social-share-button .ssb-facebook {
-  background-image: url('facebook.png') !important;
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_facebook.png) !important;
 }
+.social-share-button .ssb-twitter {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_twitter.png) !important;
+}
+.social-share-button .ssb-google_plus {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_google-plus.png) !important;
+}
+.social-share-button .ssb-linkedin {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_linkedin.png) !important;
+}
+.social-share-button .ssb-telegram {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_telegram.png) !important;
+}
+
 */

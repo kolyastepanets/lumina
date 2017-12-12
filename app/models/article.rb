@@ -7,7 +7,10 @@ class Article < ApplicationRecord
   mount_uploader :main_image, ArticleMainImageUploader
 
   has_many :category_articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :categories, -> { blog }, through: :category_articles, source: :category
+
+  validates :title, :slug, :main_image, :description, presence: true
 
   scope :by_category, lambda { |category_id|
     joins(:categories).where(category_articles: { category_id: category_id })

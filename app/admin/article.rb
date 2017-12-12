@@ -34,6 +34,26 @@ ActiveAdmin.register Article do
         image_tag article.main_image
       end
       rows :title, :slug, :category, :description
+      row 'Comments' do
+        div do
+          article.comments.each do |comment|
+            div class: 'article' do
+              div do
+                span 'Имя:'
+                span comment.name
+              end
+              div do
+                span 'Email:'
+                span comment.email
+              end
+              div do
+                span 'Текст:'
+                span comment.body
+              end
+            end
+          end
+        end
+      end
     end
   end
 

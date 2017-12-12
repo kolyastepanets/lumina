@@ -1,5 +1,5 @@
-<div class='col-xs-12'>
-  <div class=''>
+<div class='article-wrap'>
+  <div>
     <p class='article-category-list'>
       <% article.categories.each do |category| %>
         <span><%= link_to category.title, category_articles_path(category) %></span>
@@ -14,20 +14,11 @@
   <%= link_to article_path(article) do %>
     <%= image_tag article.main_image.big_preview %>
   <% end %>
-  <div class='article-truncated-description'>
+  <div class='article-truncated-description justify'>
     <%= truncate(article.description, length: 300, omission: '...') %>
   </div>
   <div class='read-more-link-wrap'>
     <%= link_to 'Читать далее', article_path(article), class: 'read-more-link' %>
   </div>
-  <div class='content-footer'>
-    <div class='leave-comment'>
-      <%= link_to 'Оставить комментарий', '#' %>
-    </div>
-    <div class='divider'>
-    </div>
-    <div class='share-social-links'>
-      <%= social_share_button_tag(article.title, url: (request.base_url + article_path(article))) %>
-    </div>
-  </div>
+  <%= render 'share_social', article: article %>
 </div>
