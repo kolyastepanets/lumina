@@ -2,8 +2,6 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   include Ckeditor::Backend::CarrierWave
   include CarrierWave::MiniMagick
 
-  storage :file
-
   def store_dir
     "uploads/ckeditor/pictures/#{model.id}"
   end
