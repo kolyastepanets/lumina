@@ -8,6 +8,6 @@ FactoryGirl.define do
         File.join(Rails.root, 'spec', 'support', 'images', 'puppy.jpg'), 'image/jpg'
       )
     end
-    association :category
+    association :category, factory: :category_for_portfolio
   end
 end

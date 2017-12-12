@@ -1,0 +1,209 @@
+.article-container {
+  img {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.carousel-articles {
+  border-bottom: 1px solid black;
+  padding-bottom: 50px;
+}
+.main-image-article {
+  @media (max-width: 1200px) {
+    width: 290px;
+    height: 230px;
+  }
+  @media (max-width: 991px) {
+    width: 220px;
+    height: 180px;
+  }
+}
+.article-title {
+  text-decoration: none;
+  color: #384151;
+  &:hover {
+    color: #ddd2cd;
+    text-decoration: none;
+  }
+  a {
+    color: #384151;
+    &:hover {
+      color: #ddd2cd;
+      text-decoration: none;
+    }
+  }
+}
+.article-category-list {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 3px;
+  a {
+    color: #384151;
+    &:hover {
+      color: #ddd2cd;
+      text-decoration: none;
+    }
+  }
+}
+.slick-slide {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.image-lili {
+  width: 300px;
+  @media (min-width: 991px) and (max-width: 1199px) {
+    width: 220px;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+.container-left, .container-right {
+  padding-top: 50px;
+}
+.container-right {
+  @media (min-width: 991px) and (max-width: 1199px) {
+    padding: 50px;
+  }
+  a {
+    color: #384151;
+    &:hover {
+      color: #ddd2cd;
+      text-decoration: none;
+    }
+  }
+}
+.article-wrap {
+  width: 650px;
+  margin: 0 auto;
+}
+.article-truncated-description {
+  width: 650px;
+  margin: 30px auto;
+}
+.read-more-link-wrap {
+  width: 650px;
+  text-align: left;
+  margin: 0 auto;
+}
+.read-more-link {
+  color: #384151;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #424040;
+  padding: 0px;
+  font-weight: bold;
+  &:hover {
+    color: #ddd2cd;
+    text-decoration: none;
+  }
+}
+.content-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 30px auto 60px auto;
+  border-bottom: 1px solid black;
+}
+.leave-comment {
+  width: 50%;
+  display: inline-block;
+  a {
+    color: #384151;
+    font-family: 'Karla', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    outline: 0;
+    display: block;
+    float: right;
+    &:hover {
+      color: #ddd2cd;
+      text-decoration: none;
+    }
+  }
+}
+.divider {
+  border-left: 1px solid #424040;
+  width: 1px;
+  height: 50px;
+  display: inline-block;
+  margin: 0 10px;
+}
+.social-share-button {
+  float: left;
+}
+.share-social-links {
+  width: 50%;
+  display: inline-block;
+  ul {
+    list-style: none;
+    outline: 0;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+    float: left;
+  }
+  li {
+    float: none;
+    outline: 0;
+    display: inline-block;
+  }
+  a {
+    border: none;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    width: 20px;
+    outline: 0;
+    color: #384151;
+    &:hover {
+      color: #ddd2cd;
+    }
+  }
+}
+#search_text {
+  color: #424040;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+  font-weight: 300;
+  border-bottom: 1px solid #424040;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/search.png);
+  background-repeat: no-repeat;
+  background-position-x: 97%;
+  background-position-y: center;
+  background-position: 97%;
+  padding: 12px !important;
+  width: 80%;
+  &:focus {
+    outline: none;
+  }
+}
+/*.social-share-button .ssb-facebook {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_facebook.png) !important;
+}
+.social-share-button .ssb-twitter {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_twitter.png) !important;
+}
+.social-share-button .ssb-google_plus {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_google-plus.png) !important;
+}
+.social-share-button .ssb-linkedin {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_linkedin.png) !important;
+}
+.social-share-button .ssb-telegram {
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_telegram.png) !important;
+}
+
+*/

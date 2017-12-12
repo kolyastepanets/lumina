@@ -1,0 +1,15 @@
+<div class='col-md-4 col-xs-12 container-right center'>
+  <%= image_tag 'https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/lili1.jpg', class: 'image-lili' %>
+  <p>От Лили</p>
+  <p>Добро пожаловать в блог Lumina! Здесь мы будем держать вас в курсе наших текущих работ и что вдохновляет нас. Не стесняйтесь комментировать, спрашивать или делиться. Мы хотели бы услышать от вас!</p>
+  <%= render 'share/social_links' %>
+  <div class='search-article'>
+    <%= form_for :search, url: articles_path, method: :get do |f| %>
+      <%= f.text_field :text, placeholder: 'Поиск' %>
+    <% end %>
+  </div>
+  <h3>Категории</h3>
+  <% @categories.each do |category| %>
+    <p><%= link_to category.title, category_articles_path(category) %></p>
+  <% end %>
+</div>

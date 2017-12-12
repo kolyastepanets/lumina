@@ -1,0 +1,47 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-8 col-xs-12 container-left article-container' data-articles-date='all-articles'>
+      <h1 class='center'>
+        <%= @article.title %>
+      </h1>
+      <p class='albulm-description'>
+        <%= @article.description.html_safe %>
+      </p>
+      <%= render 'share_social', article: @article %>
+      <div id='comments-section' class='left'>
+        <% if @article.comments.exists? %>
+          <p><%= I18n.t('comments', count: @article.comments.count) %> на <%= @article.title %></p>
+        <% end %>
+        <div class='comments'>
+          <% @article.comments.each do |comment| %>
+            <%= render 'comments/comment', comment: comment %>
+          <% end %>
+        </div>
+        <h2 class='leave-comment-text'>Оставить комментарий</h2>
+        <p>Ваш электронный адрес не будет опубликован. Обязательные поля помечены *</p>
+        <%= form_for @comment, remote: true do |f| %>
+          <p>
+            <%= f.label :body, 'Комментарий' %>
+            <%= f.text_area :body, cols: '45', rows: '8' %>
+          </p>
+
+          <p>
+            <%= f.label :name, 'Имя *' %>
+            <%= f.text_field :name %>
+          </p>
+
+          <p>
+            <%= f.label :email, 'Ваш email *' %>
+            <%= f.text_field :email %>
+          </p>
+          <%= f.hidden_field :article_id, value: @article.id %>
+
+          <p>
+            <%= f.submit 'Опубликовать' %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+    <%= render 'right_container' %>
+  </div>
+</div>

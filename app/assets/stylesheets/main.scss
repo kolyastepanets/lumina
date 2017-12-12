@@ -29,6 +29,20 @@ body {
 .justify {
   text-align: justify;
 }
+.left {
+  text-align: left;
+}
+.hidden {
+  display: none;
+}
+.active-link {
+  text-decoration: underline;
+}
+img {
+  &:hover {
+    opacity: 0.8;
+  }
+}
 .decorate-link {
   text-transform: uppercase;
   padding: 10px 0px;
@@ -58,8 +72,6 @@ body {
 .wrap:after {
   content: "";
   display: block;
-}
-.wrap:after {
   height: 300px;
 }
 .inner {
@@ -144,7 +156,7 @@ body {
   left: 0;
   width: 100%;
   background-color: white;
-  z-index: 1;
+  z-index: 2;
 }
 .site-footer {
   align-items: center;
@@ -192,9 +204,6 @@ body {
     @media (min-width: 992px) {
       width: 150px;
       height: 150px;
-    }
-    &:hover {
-      opacity: 0.8;
     }
   }
 }
