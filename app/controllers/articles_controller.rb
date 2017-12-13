@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     elsif article_params['search'].present?
       search_results
     else
-      @articles = Article.all.includes(%i[category_articles categories])
+      @articles = Article.all.order('created_at DESC').includes(%i[category_articles categories])
     end
   end
 

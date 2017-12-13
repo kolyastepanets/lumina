@@ -1,3 +1,14 @@
+.container-wrap-request {
+  h1 {
+    margin-bottom: 30px;
+  }
+  h4 {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+}
 .form-wrap {
   max-width: 550px;
   display: block;
