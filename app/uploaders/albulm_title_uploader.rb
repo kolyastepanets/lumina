@@ -1,3 +1,6 @@
 class AlbulmTitleUploader < BaseUploader
-  process resize_to_fit: [230, 230]
+  include ActiveAdminJcrop::AssetEngine::CarrierWave
+
+  process resize_to_fit: [500, 500]
+  process :active_admin_crop
 end

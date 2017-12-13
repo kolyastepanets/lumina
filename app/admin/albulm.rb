@@ -1,4 +1,6 @@
 ActiveAdmin.register Albulm do
+  jcropable
+
   controller do
     def permitted_params
       params.permit!
@@ -70,9 +72,9 @@ ActiveAdmin.register Albulm do
     f.inputs do
       f.input :title
       f.input :slug
-      f.input :title_photo, as: :file
+      f.input :title_photo, as: :jcropable, jcrop_options: { minSize: [230, 230], maxSize: [230, 230] }
       f.input :description
-      f.input :category
+      f.input :category, collection: Category.portfolio
       f.label 'Add images'
       f.fields_for :images_attributes do |image_fields|
         image_fields.file_field :file, multiple: true

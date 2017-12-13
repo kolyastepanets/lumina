@@ -38,11 +38,6 @@ body {
 .active-link {
   text-decoration: underline;
 }
-img {
-  &:hover {
-    opacity: 0.8;
-  }
-}
 .decorate-link {
   text-transform: uppercase;
   padding: 10px 0px;
@@ -204,6 +199,9 @@ img {
     @media (min-width: 992px) {
       width: 150px;
       height: 150px;
+    }
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

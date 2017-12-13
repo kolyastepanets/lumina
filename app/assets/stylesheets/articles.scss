@@ -1,13 +1,11 @@
-.article-container {
-  img {
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
 .carousel-articles {
   border-bottom: 1px solid black;
   padding-bottom: 50px;
+  img {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
 .main-image-article {
   @media (max-width: 1200px) {
@@ -58,9 +56,6 @@
   @media (min-width: 991px) and (max-width: 1199px) {
     width: 220px;
   }
-  &:hover {
-    opacity: 1;
-  }
 }
 .container-left, .container-right {
   padding-top: 50px;
@@ -80,6 +75,11 @@
 .article-wrap {
   width: 650px;
   margin: 0 auto;
+  img {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
 .article-truncated-description {
   width: 650px;
