@@ -12,7 +12,7 @@
     <p><%= article.created_at.strftime('%d.%m.%Y') %></p>
   </div>
   <%= link_to article_path(article) do %>
-    <%= image_tag article.main_image.big_preview %>
+    <%= image_tag article.main_image %>
   <% end %>
   <div class='article-truncated-description justify'>
     <%= article.preview_description %>

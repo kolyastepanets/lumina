@@ -1,4 +1,6 @@
 ActiveAdmin.register Article do
+  jcropable
+
   controller do
     def permitted_params
       params.permit!
@@ -10,8 +12,11 @@ ActiveAdmin.register Article do
   end
 
   index do
-    column :main_image do |article|
+    column :main_image, 'Большая главная картинка' do |article|
       image_tag article.main_image.url
+    end
+    column :small_main_image, 'Маленькая главная картинка' do |article|
+      image_tag article.small_main_image.url
     end
     column :title
     column :slug
@@ -33,6 +38,9 @@ ActiveAdmin.register Article do
     attributes_table do
       row :main_image do
         image_tag article.main_image
+      end
+      row :small_main_image, 'Маленькая главная картинка' do
+        image_tag article.small_main_image
       end
       rows :title, :slug, :category, :preview_description, :description
       row 'Comments' do
@@ -62,7 +70,8 @@ ActiveAdmin.register Article do
     f.inputs do
       f.input :title
       f.input :slug
-      f.input :main_image, as: :file
+      f.input :main_image, as: :jcropable, jcrop_options: { minSize: [650, 900], maxSize: [650, 900] }
+      f.input :small_main_image, as: :jcropable, jcrop_options: { minSize: [320, 260], maxSize: [320, 260] }
       f.input :preview_description
       f.input :description, as: :ckeditor
       f.input :categories,

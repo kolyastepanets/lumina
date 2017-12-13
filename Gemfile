@@ -34,6 +34,7 @@ gem 'social-share-button'
 gem 'pg_search'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'ckeditor'
+gem 'active_admin_jcrop'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'
