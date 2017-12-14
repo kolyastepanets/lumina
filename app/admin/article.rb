@@ -13,10 +13,10 @@ ActiveAdmin.register Article do
 
   index do
     column :main_image, 'Большая главная картинка' do |article|
-      image_tag article.main_image.url
+      image_tag article.main_image.thumb.url
     end
     column :small_main_image, 'Маленькая главная картинка' do |article|
-      image_tag article.small_main_image.url
+      image_tag article.small_main_image.thumb.url
     end
     column :title
     column :slug
@@ -37,10 +37,10 @@ ActiveAdmin.register Article do
   show do |article|
     attributes_table do
       row :main_image do
-        image_tag article.main_image
+        image_tag article.main_image.thumb
       end
       row :small_main_image, 'Маленькая главная картинка' do
-        image_tag article.small_main_image
+        image_tag article.small_main_image.thumb
       end
       rows :title, :slug, :category, :preview_description, :description
       row 'Comments' do
@@ -70,8 +70,8 @@ ActiveAdmin.register Article do
     f.inputs do
       f.input :title
       f.input :slug
-      f.input :main_image, as: :jcropable, jcrop_options: { minSize: [650, 900], maxSize: [650, 900] }
-      f.input :small_main_image, as: :jcropable, jcrop_options: { minSize: [320, 260], maxSize: [320, 260] }
+      f.input :main_image, as: :jcropable, jcrop_options: { aspectRatio: 1 }
+      f.input :small_main_image, as: :jcropable, jcrop_options: { aspectRatio: 1 }
       f.input :preview_description
       f.input :description, as: :ckeditor
       f.input :categories,

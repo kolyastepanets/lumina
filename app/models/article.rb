@@ -5,7 +5,7 @@ class Article < ApplicationRecord
   pg_search_scope :search_in_articles, against: %i[title description]
   friendly_id :slug, use: :slugged
   mount_uploader :main_image, ArticleMainImageUploader
-  mount_uploader :small_main_image, ArticleMainImageUploader
+  mount_uploader :small_main_image, SmallArticleMainImageUploader
 
   has_many :category_articles, dependent: :destroy
   has_many :comments, dependent: :destroy

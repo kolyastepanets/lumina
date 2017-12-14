@@ -42,7 +42,7 @@ ActiveAdmin.register Albulm do
 
   index do
     column :title_photo do |albulm|
-      image_tag albulm.title_photo
+      image_tag albulm.title_photo.thumb
     end
     column :title
     column :slug
@@ -53,7 +53,7 @@ ActiveAdmin.register Albulm do
   show do |albulm|
     attributes_table do
       row :title_photo do
-        image_tag albulm.title_photo
+        image_tag albulm.title_photo.thumb
       end
       rows :title, :slug, :category, :description
       row :images do
@@ -72,7 +72,7 @@ ActiveAdmin.register Albulm do
     f.inputs do
       f.input :title
       f.input :slug
-      f.input :title_photo, as: :jcropable, jcrop_options: { minSize: [230, 230], maxSize: [230, 230] }
+      f.input :title_photo, as: :jcropable, jcrop_options: { aspectRatio: 1 }
       f.input :description
       f.input :category, collection: Category.portfolio
       f.label 'Add images'
