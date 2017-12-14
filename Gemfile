@@ -36,6 +36,7 @@ gem 'rails-i18n', '~> 5.0.0'
 gem 'ckeditor'
 gem 'active_admin_jcrop'
 gem 'recaptcha', require: 'recaptcha/rails'
+gem 'mailgun_rails'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

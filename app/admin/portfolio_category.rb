@@ -25,8 +25,7 @@ ActiveAdmin.register Category, as: 'Portfolio Categories' do
 
   show do
     attributes_table do
-      rows :title
-      rows :slug
+      rows :title, :slug
     end
   end
 
