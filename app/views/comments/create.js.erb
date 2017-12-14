@@ -1,6 +1,0 @@
-<% if @comment.valid? %>
-  $('.comments').append('<%= j render @comment %>')
-  $('#comment_body').val('');
-  $('#comment_name').val('');
-  $('#comment_email').val('');
-<% end %>

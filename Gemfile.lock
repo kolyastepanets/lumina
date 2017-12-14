@@ -487,6 +487,8 @@ GEM
       json (>= 1.8)
       nokogiri (~> 1.5)
       trollop (~> 2.1)
+    recaptcha (4.6.2)
+      json
     reek (4.7.2)
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
@@ -637,6 +639,7 @@ DEPENDENCIES
   rails-controller-testing
   rails-i18n (~> 5.0.0)
   rails_best_practices
+  recaptcha
   rspec-rails
   rubocop
   rubycritic
