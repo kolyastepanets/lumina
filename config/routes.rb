@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resources :albulms, only: :show
   resources :comments, only: :create
+  resources :subscribers, only: :create
   resources :contact_requests, path: 'contact', only: %i[new create]
   get 'about', to: 'pages#about'
   get 'services', to: 'pages#services'

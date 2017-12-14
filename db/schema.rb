@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214080715) do
+ActiveRecord::Schema.define(version: 20171214144956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,21 @@ ActiveRecord::Schema.define(version: 20171214080715) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -146,9 +161,28 @@ ActiveRecord::Schema.define(version: 20171214080715) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "subscriber_mailgun_mails", force: :cascade do |t|
+    t.bigint "subscriber_id"
+    t.bigint "mailgun_mail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mailgun_mail_id"], name: "index_subscriber_mailgun_mails_on_mailgun_mail_id"
+    t.index ["subscriber_id"], name: "index_subscriber_mailgun_mails_on_subscriber_id"
+  end
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "albulms", "categories"
   add_foreign_key "category_articles", "articles"
   add_foreign_key "category_articles", "categories"
   add_foreign_key "comments", "articles"
   add_foreign_key "images", "albulms"
+  add_foreign_key "subscriber_mailgun_mails", "mailgun_mails"
+  add_foreign_key "subscriber_mailgun_mails", "subscribers"
 end
