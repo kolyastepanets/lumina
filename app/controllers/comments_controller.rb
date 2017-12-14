@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
-  respond_to :js
-
   def create
-    @comment = Comment.create(comment_params)
+    @comment = Comment.new(comment_params)
+    if verify_recaptcha(model: @comment) && @comment.save
+      flash[:success] = 'Спасибо йо! йо! йо!'
+    else
+      flash[:error] = @comment.errors.full_messages.to_sentence
+    end
+    redirect_to article_path(Article.find(comment_params[:article_id]))
   end
 
   private
