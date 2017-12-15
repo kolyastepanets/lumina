@@ -64,7 +64,7 @@ ActiveAdmin.register Albulm do
         ul do
           albulm.images.each do |image|
             li do
-              image_tag(image.file.url)
+              image_tag(image.file.thumb.url)
             end
           end
         end
@@ -72,12 +72,12 @@ ActiveAdmin.register Albulm do
     end
   end
 
-  form html: { multipart: true } do |f|
+  form do |f|
     f.inputs do
       f.input :title
       f.input :slug
       f.input :title_photo, as: :jcropable, jcrop_options: { aspectRatio: 1 }
-      f.input :description
+      f.input :description, as: :ckeditor
       f.input :category, collection: Category.portfolio
       f.label 'Add images'
       f.fields_for :images_attributes do |image_fields|
@@ -86,7 +86,10 @@ ActiveAdmin.register Albulm do
       resource.images.each do |image|
         li do
           div do
-            image_tag(image.file.url)
+            image_tag(image.file.thumb.url)
+          end
+          div do
+            link_to 'Edit image', edit_admin_image_path(image, albulm_id: resource.id)
           end
           div do
             link_to 'Delete image',
@@ -97,6 +100,12 @@ ActiveAdmin.register Albulm do
         end
       end
     end
+    # f.has_many :images do |b|
+    #   span do
+    #     image_tag(b.object.file)
+    #   end
+    #   b.input :file, as: :jcropable, jcrop_options: { aspectRatio: 1 }
+    # end
 
     f.actions
   end

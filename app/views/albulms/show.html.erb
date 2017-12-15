@@ -11,11 +11,11 @@
       <%= @albulm.title %>
     </h1>
     <p class='albulm-description'>
-      <%= @albulm.description %>
+      <%= @albulm.description.html_safe %>
     </p>
     <% @albulm.images.each do |image| %>
       <div class='col-xs-6 center albulm-image-wrap'>
-        <%= image_tag(image.file, class: 'albulm-image') %>
+        <%= image_tag(image.file.thumb, class: 'albulm-image') %>
       </div>
     <% end %>
   </div>
