@@ -5,3 +5,5 @@ $skinLogo: url("logo.png") no-repeat 0 0;
 @import "active_admin/select2/base";
 @import "admin/articles";
 @import "admin/ckeditor";
+@import "admin/base";
+@import "admin/mail";

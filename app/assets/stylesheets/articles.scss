@@ -190,6 +190,49 @@
     outline: none;
   }
 }
+.subscribe-for-newsletter {
+  margin: 50px 0;
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2.6px;
+    line-height: 1.3125;
+    margin: 0 0 1.75em;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+  input {
+    display: inline-block;
+    width: 80%;
+    border-bottom: 1px solid #424040;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    font-family: 'Karla', sans-serif;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0px 0px 5px 0px;
+    &:focus {
+      outline: none;
+    }
+  }
+  input[type="submit"] {
+    vertical-align: top;
+    padding: 10px 20px !important;
+    border-radius: 0;
+    background: none;
+    border: 1px solid #424040;
+    color: #424040;
+    margin: 20px auto 0px auto;
+    display: block;
+    width: 85%;
+  }
+  label {
+    width: 100%;
+  }
+}
 /*.social-share-button .ssb-facebook {
   background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_facebook.png) !important;
 }

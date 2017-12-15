@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :load_categories
+  before_action :init_subscriber
 
   def index
     if article_params['category_slug'].present?
@@ -32,6 +33,10 @@ class ArticlesController < ApplicationController
 
   def load_categories
     @categories = Category.blog
+  end
+
+  def init_subscriber
+    @subscriber = Subscriber.new
   end
 
   def article_params

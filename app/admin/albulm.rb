@@ -46,7 +46,11 @@ ActiveAdmin.register Albulm do
     end
     column :title
     column :slug
-    column :category
+    column :category do |albulm|
+      span do
+        link_to albulm.category.title, admin_portfolio_category_path(albulm.category)
+      end
+    end
     actions
   end
 

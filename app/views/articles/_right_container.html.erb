@@ -8,6 +8,16 @@
       <%= f.text_field :text, placeholder: 'Поиск' %>
     <% end %>
   </div>
+  <div class='subscribe-for-newsletter'>
+    <h2>Подпишитесь на нашу рассылку</h2>
+    <%= form_for @subscriber do |f| %>
+      <%= f.text_field :email %>
+      <%= f.label :email, 'Ваш емейл' %>
+      <%= f.text_field :name %>
+      <%= f.label :name, 'Ваше имя' %>
+      <%= f.submit 'Подписаться' %>
+    <% end %>
+  </div>
   <h3>Категории</h3>
   <% @categories.each do |category| %>
     <p><%= link_to category.title, category_articles_path(category) %></p>

@@ -20,8 +20,12 @@ ActiveAdmin.register Article do
     end
     column :title
     column :slug
-    column :preview_description
-    column :description
+    column :preview_description do |article|
+      truncate(article.preview_description, omision: '...', length: 200)
+    end
+    column :description do |article|
+      truncate(article.description, omision: '...', length: 300)
+    end
     column(:categories) do |article|
       div do
         article.categories.each do |category|
@@ -42,7 +46,10 @@ ActiveAdmin.register Article do
       row :small_main_image, 'Маленькая главная картинка' do
         image_tag article.small_main_image.thumb
       end
-      rows :title, :slug, :category, :preview_description, :description
+      rows :title, :slug, :category, :preview_description
+      row :description do
+        article.description.html_safe
+      end
       row 'Comments' do
         div do
           article.comments.each do |comment|
