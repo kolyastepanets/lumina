@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if verify_recaptcha(model: @comment) && @comment.save
-      flash[:success] = 'Спасибо йо! йо! йо!'
+      flash[:success] = 'Спасибо за оставленный комментарий!'
     else
       flash[:error] = @comment.errors.full_messages.to_sentence
     end

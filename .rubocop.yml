@@ -17,3 +17,4 @@ Metrics/BlockLength:
   Exclude:
     - 'app/admin/*.rb'
     - 'spec/factories/*.rb'
+    - 'spec/controllers/*.rb'

@@ -15,12 +15,12 @@
   <div class='form-wrap'>
     <%= form_for @contact_request, url: {action: 'create'} do |f| %>
       <p>
-        <%= f.label :name, 'Ваше имя' %>
+        <%= f.label :name, 'Ваше имя (обязательно)' %>
         <%= f.text_field :name %>
       </p>
 
       <p>
-        <%= f.label :email, 'Ваш email' %>
+        <%= f.label :email, 'Ваш email (обязательно)' %>
         <%= f.text_field :email %>
       </p>
 

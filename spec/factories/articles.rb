@@ -14,8 +14,11 @@ FactoryGirl.define do
         File.join(Rails.root, 'spec', 'support', 'images', "nature#{rand(11)}.jpg"), 'image/jpg'
       )
     end
-    before(:create) do |article, _evaluator|
-      article.categories << create_list(:category_for_blog, 2)
+
+    trait :with_categories do
+      before(:create) do |article, _evaluator|
+        article.categories << create_list(:category_for_blog, 2)
+      end
     end
   end
 end
