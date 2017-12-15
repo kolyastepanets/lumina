@@ -13,8 +13,12 @@ AllCops:
     - config/environments/*
     - config/initializers/*
     - db/seeds.rb
+    - spec/support/helpers/capybara.rb
+    - spec/rails_helper.rb
 Metrics/BlockLength:
   Exclude:
     - 'app/admin/*.rb'
     - 'spec/factories/*.rb'
     - 'spec/controllers/*.rb'
+    - 'spec/features/**/*.rb'
+    - 'spec/rails_helper.rb'

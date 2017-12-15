@@ -49,6 +49,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -63,6 +64,9 @@ group :development do
 end
 
 group :test do
+  gem 'launchy'
+  gem 'capybara-selenium'
+  gem 'capybara-screenshot'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
 end
