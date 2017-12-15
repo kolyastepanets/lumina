@@ -22,7 +22,8 @@ ActiveAdmin.register MailgunMail, as: 'Email' do
     def create_and_send_multiple_emails(resource)
       Subscriber.active.find_each do |subscriber|
         SubscriberMailgunMail.create(subscriber_id: subscriber.id, mailgun_mail_id: resource.id)
-        OfficeMailer.delay.send_message(resource, subscriber.email)
+        id = Rails.application.message_verifier(:unsubscribe).generate(subscriber.id)
+        SubscriberMailer.delay.send_message(resource, subscriber, id)
       end
     end
   end

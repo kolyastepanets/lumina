@@ -89,6 +89,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.domain = 'staging.lumina.dp.ua'
+  config.action_mailer.default_url_options = { host: 'staging.lumina.dp.ua' }
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: Figaro.env.mailgun_api_key,
