@@ -3,7 +3,7 @@ class CreateSubscriberHandler < BaseHandler
 
   def handle(transaction)
     id = Rails.application.message_verifier(:unsubscribe).generate(transaction.subscriber.id)
-    SubscriberMailer.delay.thank_you(@subscriber, id)
+    SubscriberMailer.delay.thank_you(transaction.subscriber, id)
     { key: 'success', message: 'Спасибо за подписку!' }
   end
 
