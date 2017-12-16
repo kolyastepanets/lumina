@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function() {
       $('.topbutton').fadeOut();
     }
 
-    if ($(this).scrollTop() >= 300) {
+    if ($(this).scrollTop() >= 250) {
       $('.main-navigation').addClass('fixed-header');
     }
     else {

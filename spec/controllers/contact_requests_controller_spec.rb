@@ -16,7 +16,7 @@ RSpec.describe ContactRequestsController, type: :controller do
   end
 
   describe 'POST #create' do
-    let!(:contact_request) { create(:contact_request) }
+    let!(:contact_request) { build(:contact_request) }
 
     context 'success' do
       before do
@@ -28,22 +28,22 @@ RSpec.describe ContactRequestsController, type: :controller do
       end
 
       it 'should have vacation id' do
-        expect(ContactRequest.count).to eq 2
+        expect(ContactRequest.count).to eq 1
       end
     end
 
-    # context 'fail' do
-    #   before do
-    #     post :create, params: { contact_request: {email: ''} }
-    #   end
+    context 'fail' do
+      before do
+        post :create, params: { contact_request: { name: '' } }
+      end
 
-    #   it 'should show errors' do
-    #     expect(controller.flash[:error]).not_to be_empty
-    #   end
+      it 'should show errors' do
+        expect(controller.flash[:error]).to eq 'Заполните все поля пожалуйста'
+      end
 
-    #   it 'returns template' do
-    #     expect(response).to render_template :new
-    #   end
-    # end
+      it 'returns template' do
+        expect(response).to redirect_to(new_contact_request_path)
+      end
+    end
   end
 end

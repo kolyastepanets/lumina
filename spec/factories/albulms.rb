@@ -5,7 +5,7 @@ FactoryGirl.define do
     description { Faker::Lorem.paragraph }
     title_photo do
       Rack::Test::UploadedFile.new(
-        File.join(Rails.root, 'spec', 'support', 'images', 'puppy.jpg'), 'image/jpg'
+        File.join(Rails.root, 'spec', 'support', 'images', "nature#{rand(11)}.jpg"), 'image/jpg'
       )
     end
     association :category, factory: :category_for_portfolio

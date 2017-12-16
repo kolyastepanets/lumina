@@ -7,11 +7,11 @@ class ContactRequestsController < ApplicationController
     @contact_request = ContactRequest.new(contact_request_params)
 
     if @contact_request.save
-      flash[:success] = 'Спасибо йо! йо! йо!'
-      redirect_to new_contact_request_path
+      flash[:success] = 'Спасибо за сообщение!'
     else
-      render :new
+      flash[:error] = 'Заполните все поля пожалуйста'
     end
+    redirect_to new_contact_request_path
   end
 
   private

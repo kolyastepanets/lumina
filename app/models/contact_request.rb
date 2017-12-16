@@ -1,3 +1,3 @@
 class ContactRequest < ApplicationRecord
-  # validates :email, presence: true
+  validates :email, :name, presence: true
 end
