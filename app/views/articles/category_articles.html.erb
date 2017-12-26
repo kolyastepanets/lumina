@@ -1,5 +1,5 @@
 <div class='container center'>
-  <h1>Категория: <%= @category.title %></h1>
+  <h1><%= I18n.t('articles.category', title: @category.title) %></h1>
   <div class='row'>
     <% @articles.each do |article| %>
       <div class='col-xs-4'>

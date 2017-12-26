@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    if verify_recaptcha(model: @comment) && @comment.save
-      flash[:success] = 'Спасибо за оставленный комментарий!'
+    if verify_recaptcha(model: @comment, message: I18n.t('comment.captcha_fail')) && @comment.save
+      flash[:success] = I18n.t('comment.success_created')
     else
       flash[:error] = @comment.errors.full_messages.to_sentence
     end

@@ -8,9 +8,9 @@ class ContactRequestsController < ApplicationController
 
     if @contact_request.save
       OfficeMailer.delay.notify_on_new_request(@contact_request)
-      flash[:success] = 'Спасибо за сообщение!'
+      flash[:success] = I18n.t('contact_request.success_created')
     else
-      flash[:error] = 'Заполните все поля пожалуйста'
+      flash[:error] = I18n.t('contact_request.fail_create')
     end
     redirect_to new_contact_request_path
   end

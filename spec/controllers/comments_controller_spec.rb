@@ -21,11 +21,12 @@ RSpec.describe CommentsController, type: :controller do
 
     context 'fail' do
       before do
-        post :create, params: { comment: { article_id: article.id } }
+        post :create, params: { comment: { article_id: article.id, name: comment.name } }
       end
 
       it 'should show errors' do
-        expect(controller.flash[:error]).to eq 'Email can\'t be blank and Name can\'t be blank'
+        expect(controller.flash[:error]).to eq I18n.t('errors.format', attribute: 'Email',
+                                                                       message: I18n.t('errors.messages.blank'))
       end
 
       it 'returns to article' do

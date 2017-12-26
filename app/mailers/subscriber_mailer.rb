@@ -11,7 +11,11 @@ class SubscriberMailer < ApplicationMailer
   def thank_you(subscriber, id)
     @id = id
     @subscriber = subscriber
-    mail(from: 'Lumina <no_reply@lumina.dp.ua>', to: @subscriber.email, subject: 'Спасибо!')
+    mail(
+      from: 'Lumina <no_reply@lumina.dp.ua>',
+      to: @subscriber.email,
+      subject: I18n.t('subscriber.subscription_created')
+    )
   end
 
   def thank_you_for_renew(subscriber, id)
@@ -20,7 +24,7 @@ class SubscriberMailer < ApplicationMailer
     mail(
       from: 'Lumina <no_reply@lumina.dp.ua>',
       to: @subscriber.email,
-      subject: 'Спасибо что возобновили подписку!'
+      subject: I18n.t('subscriber.subscription_resumed')
     )
   end
 end

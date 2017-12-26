@@ -10,7 +10,7 @@
       <%= render 'share_social', article: @article %>
       <div id='comments-section' class='left'>
         <% if @article.comments.exists? %>
-          <p><%= I18n.t('comments', count: @article.comments.count, locale: :ru) %> на <%= @article.title %></p>
+          <p><%= I18n.t('comments', count: @article.comments.count) %></p>
         <% end %>
         <div class='comments'>
           <% @article.comments.each do |comment| %>

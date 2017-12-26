@@ -9,7 +9,6 @@ class ArticlesController < ApplicationController
       search_results
     else
       @articles = Article.all.order('created_at DESC').includes(%i[category_articles categories])
-      # binding.pry
     end
   end
 
