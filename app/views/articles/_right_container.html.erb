@@ -4,7 +4,7 @@
   <p>Добро пожаловать в блог Lumina! Здесь мы будем держать вас в курсе наших текущих работ и того, что вдохновляет нас. Не стесняйтесь комментировать, спрашивать или делиться. Мы рады слышать от вас обратную связь!</p>
   <%= render 'share/social_links' %>
   <div class='search-article'>
-    <%= form_for :search, url: articles_path, method: :get do |f| %>
+    <%= form_for :search, url: articles_path, method: :get, html: { id: 'search-form' } do |f| %>
       <%= f.text_field :text, placeholder: 'Поиск' %>
     <% end %>
   </div>

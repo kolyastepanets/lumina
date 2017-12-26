@@ -65,6 +65,7 @@ end
 
 group :test do
   gem 'launchy'
+  gem 'capybara-email'
   gem 'capybara-selenium'
   gem 'capybara-screenshot'
   gem 'rails-controller-testing'

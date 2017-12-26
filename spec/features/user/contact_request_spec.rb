@@ -4,6 +4,7 @@ feature 'Contact request', js: true do
   let!(:contact_request) { build(:contact_request) }
 
   background do
+    clear_emails
     visit root_path
     click_link 'Контакты'
   end
@@ -16,6 +17,8 @@ feature 'Contact request', js: true do
     click_button 'Отправить'
 
     expect(page).to have_content 'Спасибо за сообщение!'
+    open_email(Figaro.env.gmail_receiver)
+    expect(current_email).to have_content contact_request.body
   end
 
   scenario 'fail send request' do

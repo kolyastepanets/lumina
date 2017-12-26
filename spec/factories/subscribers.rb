@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :subscriber do
-    name 'MyString'
-    email 'MyString'
-    active false
+    name { Faker::Internet.user_name }
+    email { Faker::Internet.email }
+    active true
   end
 end
