@@ -7,6 +7,7 @@ class ContactRequestsController < ApplicationController
     @contact_request = ContactRequest.new(contact_request_params)
 
     if @contact_request.save
+      OfficeMailer.delay.notify_on_new_request(@contact_request)
       flash[:success] = 'Спасибо за сообщение!'
     else
       flash[:error] = 'Заполните все поля пожалуйста'

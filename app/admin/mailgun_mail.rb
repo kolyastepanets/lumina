@@ -12,7 +12,7 @@ ActiveAdmin.register MailgunMail, as: 'Email' do
           if resource.multiple_emails.present?
             create_and_send_multiple_emails(resource)
           else
-            OfficeMailer.delay.send_message(resource, resource.sent_to)
+            OfficeMailer.delay.send_message(resource)
           end
           redirect_to(collection_url)
         end
