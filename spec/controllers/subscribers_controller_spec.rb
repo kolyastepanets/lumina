@@ -37,11 +37,12 @@ RSpec.describe SubscribersController, type: :controller do
 
     context 'fail' do
       before do
-        post :create, params: { subscriber: { name: '', email: '' } }
+        post :create, params: { subscriber: { name: 'test', email: '' } }
       end
 
       it 'should show errors' do
-        expect(controller.flash[:error]).to eq 'Email can\'t be blank and Name can\'t be blank'
+        expect(controller.flash[:error]).to eq I18n.t('errors.format', attribute: 'Email',
+                                                                       message: I18n.t('errors.messages.blank'))
       end
 
       it 'should redirect to articles_path' do
@@ -60,7 +61,7 @@ RSpec.describe SubscribersController, type: :controller do
       end
 
       it 'should show success message' do
-        expect(controller.flash[:notice]).to eq 'Подписка отменена!'
+        expect(controller.flash[:notice]).to eq I18n.t('subscriber.subscription_cancelled')
       end
 
       it 'should have inactive subscription' do
@@ -79,7 +80,7 @@ RSpec.describe SubscribersController, type: :controller do
       end
 
       it 'should show errors' do
-        expect(controller.flash[:error]).to eq 'Не верный запрос'
+        expect(controller.flash[:error]).to eq I18n.t('subscriber.fail_cancel')
       end
 
       it 'redirects to root' do

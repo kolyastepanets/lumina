@@ -14,12 +14,12 @@ class SubscribersController < ApplicationController
       @subscriber = Subscriber.find(id)
 
       if @subscriber.update(active: false)
-        flash[:notice] = 'Подписка отменена!'
+        flash[:notice] = I18n.t('subscriber.subscription_cancelled')
       else
-        flash[:alert] = 'Ошибка сервера'
+        flash[:alert] = I18n.t('subscriber.fail')
       end
     rescue ActiveSupport::MessageVerifier::InvalidSignature
-      flash[:error] = 'Не верный запрос'
+      flash[:error] = I18n.t('subscriber.fail_cancel')
     end
     redirect_to root_url
   end

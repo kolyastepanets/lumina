@@ -38,7 +38,7 @@ RSpec.describe ContactRequestsController, type: :controller do
       end
 
       it 'should show errors' do
-        expect(controller.flash[:error]).to eq 'Заполните все поля пожалуйста'
+        expect(controller.flash[:error]).to eq I18n.t('contact_request.fail_create')
       end
 
       it 'returns template' do
