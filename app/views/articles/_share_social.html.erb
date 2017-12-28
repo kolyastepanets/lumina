@@ -5,6 +5,6 @@
   <div class='divider'>
   </div>
   <div class='share-social-links'>
-    <%= social_share_button_tag(article.title, url: (request.base_url + article_path(article))) %>
+    <%= social_share_button_tag(article.title, url: (request.base_url + article_path(article)), desc: article.title) %>
   </div>
 </div>
