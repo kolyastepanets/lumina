@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   resources :contact_requests, path: 'contact', only: %i[new create]
   get 'about', to: 'pages#about'
   get 'services', to: 'pages#services'
+  get 'code', to: 'pages#code'
 end

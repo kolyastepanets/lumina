@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def about; end
 
   def services; end
+
+  def code
+    render json: Code.first.try(:number)
+  end
 end
