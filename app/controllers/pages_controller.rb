@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   def services; end
 
   def code
-    render json: Code.first.try(:number)
+    render json: Code.last.try(:number)
   end
 end
