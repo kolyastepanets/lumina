@@ -8,4 +8,8 @@ class PagesController < ApplicationController
   def code
     render json: Code.last.try(:number)
   end
+
+  def competitor
+    render json: Competitor.last.try(:name)
+  end
 end

@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'services', to: 'pages#services'
   get 'code', to: 'pages#code'
+  get 'competitor', to: 'pages#competitor'
 end
