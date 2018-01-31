@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
   end
   resources :contact_requests, path: 'contact', only: %i[new create]
+  resources :statistic_likes, only: %i[create update]
   get 'about', to: 'pages#about'
   get 'services', to: 'pages#services'
   get 'code', to: 'pages#code'

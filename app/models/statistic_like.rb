@@ -1,0 +1,2 @@
+class StatisticLike < ApplicationRecord
+end
