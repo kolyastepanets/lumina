@@ -1,2 +1,0 @@
-class StatisticLike < ApplicationRecord
-end
