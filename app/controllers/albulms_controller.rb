@@ -1,6 +1,6 @@
 class AlbulmsController < ApplicationController
   def show
-    @albulms = Albulm.all
     @albulm = Albulm.friendly.find(params[:id])
+    @albulms = @albulm.category.albulms
   end
 end

@@ -16,4 +16,9 @@ $(document).on('turbolinks:load', function() {
     var filterValue = $(this).attr('data-show');
     $grid.isotope({ filter: '.' + filterValue });
   });
+
+  function initImages() {
+    $('.albulm-title-wrap').addClass('non-visibility');
+    $('img').removeClass('light-visibility');
+  }
 });
