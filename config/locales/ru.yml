@@ -1,4 +1,9 @@
 ru:
+  active_admin:
+    crop:
+      open_crop_modal: Обрезать картинку
+      save_cropped_image: Сохранить
+      cancel: Отменить
   devise:
     confirmations:
       confirmed: "Ваш адрес эл. почты успешно подтвержден."
