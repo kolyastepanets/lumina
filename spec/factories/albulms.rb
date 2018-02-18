@@ -9,5 +9,11 @@ FactoryGirl.define do
       )
     end
     association :category, factory: :category_for_portfolio
+
+    trait :with_images do
+      after(:create) do |instance|
+        create_list :image, 5, albulm: instance
+      end
+    end
   end
 end

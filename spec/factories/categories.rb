@@ -25,6 +25,7 @@ FactoryGirl.define do
   factory :category_for_portfolio, class: Category do
     title { %w[IDENTITIES ILLUSTRATION OTHER WEDDINGS].sample }
     slug { Faker::Lorem.word }
+    english_title { Faker::Lorem.word }
     classification 'portfolio'
   end
 end

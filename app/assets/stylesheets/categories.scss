@@ -4,6 +4,12 @@
   padding: 0;
   margin: 10px;
   text-align: center;
+  @media (min-width: 992px) {
+    width: 300px;
+  }
+  @media (min-width: 1200px) {
+    width: 370px;
+  }
 }
 .albulm-title-wrap {
   padding: 0px 20px;
@@ -37,9 +43,6 @@
     text-align: center;
     margin-top: 20px;
   }
-}
-.grid-item {
-  width: 25%;
 }
 .grid-item--width2 {
   width: 50%;
