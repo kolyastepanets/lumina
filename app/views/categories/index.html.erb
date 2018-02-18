@@ -1,12 +1,12 @@
 <div class='container'>
   <div class='row links-to-category'>
-    <div class='col-xs-3'>
+    <div class='col-xs-4 col-md-3'>
       <a href='#' class='decorate-link' data-show='all'>
         Показать все
       </a>
     </div>
     <% @categories.each do |category| %>
-      <div class='col-xs-3'>
+      <div class='col-xs-4 col-md-3'>
         <a href='#' class='decorate-link' data-show="<%= category.english_title %>">
           <%= category.title %>
         </a>
