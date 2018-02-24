@@ -39,6 +39,7 @@ gem 'recaptcha', require: 'recaptcha/rails'
 gem 'mailgun_rails'
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem 'acts_as_list'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

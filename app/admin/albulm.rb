@@ -64,7 +64,7 @@ ActiveAdmin.register Albulm do
         ul do
           albulm.images.each do |image|
             li do
-              image_tag(image.file.thumb.url)
+              image_tag(image.file.small.url)
             end
           end
         end
@@ -86,7 +86,7 @@ ActiveAdmin.register Albulm do
       resource.images.each do |image|
         li do
           div do
-            image_tag(image.file.thumb.url)
+            image_tag(image.file.small.url)
           end
           div do
             link_to 'Edit image', edit_admin_image_path(image, albulm_id: resource.id)
@@ -100,12 +100,6 @@ ActiveAdmin.register Albulm do
         end
       end
     end
-    # f.has_many :images do |b|
-    #   span do
-    #     image_tag(b.object.file)
-    #   end
-    #   b.input :file, as: :jcropable, jcrop_options: { aspectRatio: 1 }
-    # end
 
     f.actions
   end

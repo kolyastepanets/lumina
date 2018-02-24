@@ -3,5 +3,7 @@ class Image < ApplicationRecord
 
   belongs_to :albulm
 
+  acts_as_list scope: :albulm
+
   validates :file, presence: true
 end
