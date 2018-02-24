@@ -6,7 +6,7 @@ class Albulm < ApplicationRecord
   mount_uploader :title_photo, AlbulmTitleUploader
 
   belongs_to :category
-  has_many :images, dependent: :destroy
+  has_many :images, -> { order(position: :asc) }, dependent: :destroy
 
   validates :slug, format: { with: EN_SLUG_REGEX }
   validates :slug, :title, :description, :title_photo, presence: true

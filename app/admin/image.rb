@@ -21,6 +21,7 @@ ActiveAdmin.register Image do
   form do |f|
     f.inputs do
       f.input :file, as: :jcropable, jcrop_options: { aspectRatio: 1 }
+      f.input :position
       f.input :albulm
     end
 
