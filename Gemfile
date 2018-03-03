@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'font-awesome-rails'
 gem 'figaro'
 gem 'instagram-continued', require: 'instagram'
+gem 'google-analytics-rails', '1.1.1'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

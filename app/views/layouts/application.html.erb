@@ -4,6 +4,8 @@
     <title>Lumina</title>
     <%= csrf_meta_tags %>
 
+    <%= analytics_init if GoogleAnalytics.valid_tracker? %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -22,26 +24,6 @@
               <nav class='main-navigation'>
                 <div class='menu-main-menu-container'>
                   <ul class='primary-menu'>
-<!--
-                    <li>
-                      <a>Главная</a>
-                    </li>
-                    <li>
-                      <a>О нас</a>
-                    </li>
-                    <li>
-                      <a>Услуги</a>
-                    </li>
-                    <li>
-                      <a>Портфолио</a>
-                    </li>
-                    <li>
-                      <a>Блог</a>
-                    </li>
-                    <li>
-                      <a>Контакты</a>
-                    </li>
- -->
                   </ul>
                 </div>
               </nav>
