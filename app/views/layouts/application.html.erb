@@ -60,18 +60,14 @@
       </div>
     </div>
     <footer class='site-footer'>
-      <div class='container'>
-        <div class='row'>
-          <h2 class='widget-title'>Cледите за нами в Instagram</h2>
-          <% @photos.each do |photo| %>
-            <div class='col-md-2 col-sm-4 col-xs-6 footer-image-instagram'>
-              <%= link_to photo['link'], target: :_blank do %>
-                <%= image_tag photo['images']['low_resolution']['url'] %>
-              <% end %>
-            </div>
+      <h2 class='widget-title'>Cледите за нами в Instagram</h2>
+      <% @photos.each do |photo| %>
+        <div class='footer-image-instagram'>
+          <%= link_to photo['link'], target: :_blank do %>
+            <%= image_tag photo['images']['low_resolution']['url'] %>
           <% end %>
         </div>
-      </div>
+      <% end %>
       <%= render 'share/social_links' %>
     </footer>
     <a href='#' class='topbutton'></a>

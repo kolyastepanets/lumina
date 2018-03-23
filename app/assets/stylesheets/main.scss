@@ -159,10 +159,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 0px 0px 1.75em 0px;
-  height: 300px;
+  height: 250px;
   margin-top: 50px;
-  @media (max-width: 991px) {
-    height: 590px;
+  @media (min-width: 1440px) {
+    height: 410px;
   }
 }
 .footersocial {
@@ -183,24 +183,21 @@ body {
   padding: 0px;
 }
 .widget-title {
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   letter-spacing: 2.6px;
   line-height: 1.3125;
-  margin: 1em 0 1.75em;
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
 }
 .footer-image-instagram {
+  width: 11.11%;
   margin-top: 10px;
   img {
-    width: 220px;
-    height: 220px;
-    @media (min-width: 992px) {
-      width: 150px;
-      height: 150px;
-    }
+    width: 100%;
+    height: auto;
     &:hover {
       opacity: 0.8;
     }
