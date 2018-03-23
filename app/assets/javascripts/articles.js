@@ -20,4 +20,10 @@ $(document).on('turbolinks:load', function() {
     slidesToShow: 3,
     slidesToScroll: 3
   });
+
+  $('.ssb-icon.ssb-twitter').addClass('fa fa-twitter fa-1x');
+  $('.ssb-icon.ssb-facebook').addClass('fa fa-facebook fa-1x');
+  $('.ssb-icon.ssb-linkedin').addClass('fa fa-linkedin fa-1x');
+  $('.ssb-icon.ssb-telegram').addClass('fa fa-telegram fa-1x');
+  $('.ssb-icon.ssb-google_plus').addClass('fa fa-google-plus fa-1x');
 });

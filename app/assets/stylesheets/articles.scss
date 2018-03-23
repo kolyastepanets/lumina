@@ -233,20 +233,14 @@
     width: 100%;
   }
 }
-/*.social-share-button .ssb-facebook {
-  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_facebook.png) !important;
+.social-share-button {
+  a {
+    background-image: none !important;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .ssb-facebook, .ssb-twitter {
+    width: 13px !important;
+  }
 }
-.social-share-button .ssb-twitter {
-  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_twitter.png) !important;
-}
-.social-share-button .ssb-google_plus {
-  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_google-plus.png) !important;
-}
-.social-share-button .ssb-linkedin {
-  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_linkedin.png) !important;
-}
-.social-share-button .ssb-telegram {
-  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rsz_telegram.png) !important;
-}
-
-*/
