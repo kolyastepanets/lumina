@@ -48,3 +48,21 @@ h1 {
     margin-bottom: 40px;
   }
 }
+.carousel-photos {
+  margin: 0 auto;
+  width: 830px;
+  img {
+    max-width: 1000px;
+    max-height: 600px;
+  }
+  .slick-prev {
+    left: 0px;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 0px;
+  }
+  .slick-prev, .slick-next {
+    top: 50%;
+  }
+}
