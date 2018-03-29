@@ -44,7 +44,7 @@ body {
   border-radius: 0px;
   font-size: 11.5px;
   font-weight: 300;
-  margin: 0px 40px;
+  /*margin: 0px 40px;*/
   border: none;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1.8px;
@@ -76,7 +76,7 @@ body {
 }
 .site-header {
   @media screen and (min-width: 44.375em) {
-    padding: 2.625em 7.6923% 5px 7.6923%;
+    padding: 2.625em 7.6923% 0 7.6923%;
   }
   @media screen and (min-width: 61.5625em) {
     padding: 4.25em 0px 1em 0px;

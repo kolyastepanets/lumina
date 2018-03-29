@@ -15,10 +15,26 @@ $(document).on('turbolinks:load', function() {
     $(this).addClass('active-link');
   });
 
-  $('.carousel-articles') .slick({
+  $('.carousel-articles').slick({
     infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   });
 
   $('.ssb-icon.ssb-twitter').addClass('fa fa-twitter fa-1x');
