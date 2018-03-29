@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $('.albulm-wrap a').hover(
     function() {
       $(this).find('.albulm-title-wrap').toggleClass('non-visibility');
@@ -17,8 +17,6 @@ $(document).on('turbolinks:load', function() {
     $grid.isotope({ filter: '.' + filterValue });
   });
 
-  function initImages() {
-    $('.albulm-title-wrap').addClass('non-visibility');
-    $('img').removeClass('light-visibility');
-  }
+  $('.albulm-title-wrap').addClass('non-visibility');
+  $('img').removeClass('light-visibility');
 });

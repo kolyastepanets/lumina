@@ -61,12 +61,6 @@ body {
   box-sizing: border-box;
   display: block;
   min-height: 100%;
-  margin-bottom: -300px;
-}
-.wrap:after {
-  content: "";
-  display: block;
-  height: 300px;
 }
 .inner {
   margin: 0 auto;

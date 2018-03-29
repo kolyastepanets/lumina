@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $('[data-link-articles-date]').on( 'click', function(e) {
     e.preventDefault();
     var id = $(this).attr('data-link-articles-date');
