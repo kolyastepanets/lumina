@@ -23,7 +23,6 @@ $(document).on('turbolinks:load', function() {
     });
   }
 
-
   $('.carousel-photos').slick({
     autoplay: true,
     slidesToShow: 1,

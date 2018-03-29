@@ -36,6 +36,7 @@
           </p>
           <%= f.hidden_field :article_id, value: @article.id %>
 
+          <%= recaptcha_tags %>
 
           <p>
             <%= f.submit 'Опубликовать' %>

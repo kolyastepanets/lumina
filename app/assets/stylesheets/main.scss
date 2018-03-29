@@ -4,7 +4,7 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
-  height: 100%;
+  min-height: 100%;
 }
 body {
   background-color: rgb(255, 255, 255);
@@ -15,7 +15,7 @@ body {
   font-size: 13px;
   line-height: 1.75;
   margin: 0px;
-  height: 100%;
+  min-height: 100%;
 }
 .non-visibility {
   opacity: 0;
@@ -44,7 +44,6 @@ body {
   border-radius: 0px;
   font-size: 11.5px;
   font-weight: 300;
-  /*margin: 0px 40px;*/
   border: none;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1.8px;
