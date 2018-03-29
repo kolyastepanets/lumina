@@ -99,6 +99,17 @@ body {
 .header-image {
   clear: both;
   margin: 0.875em auto 50px auto;
+  @media screen and (max-width: 640px) {
+    img {
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    margin: 30px auto 30px auto;
+    img {
+      width: 200px;
+    }
+  }
 }
 .site-header-menu {
   margin-top: 0px;
@@ -115,11 +126,12 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    text-align: center;
     a {
       color: #384151;
       text-decoration: none;
       outline-offset: -8px;
-      padding: 1.65625em 2.5em;
+      padding: 1.6em 2.5em;
       white-space: nowrap;
       outline: 0;
       text-transform: uppercase;
@@ -131,6 +143,12 @@ body {
       &:hover {
         color: #ddd2cd;
         cursor: pointer;
+      }
+      @media screen and (max-width: 860px) {
+        padding: 1.6em 1.5em;
+      }
+      @media screen and (max-width: 595px) {
+        padding: 1em 1em;
       }
     }
   }
@@ -159,7 +177,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 0px 0px 1.75em 0px;
-  height: 250px;
+  height: 270px;
   margin-top: 50px;
   @media (min-width: 1440px) {
     height: 410px;
@@ -195,6 +213,9 @@ body {
 .footer-image-instagram {
   width: 11.11%;
   margin-top: 10px;
+  @media screen and (max-width: 425px) {
+    width: 33.33%;
+  }
   img {
     width: 100%;
     height: auto;

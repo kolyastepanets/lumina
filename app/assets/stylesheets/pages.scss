@@ -50,7 +50,8 @@ h1 {
 }
 .carousel-photos {
   margin: 0 auto;
-  width: 830px;
+  width: 100%;
+  max-width: 830px;
   img {
     max-width: 1000px;
     max-height: 600px;
