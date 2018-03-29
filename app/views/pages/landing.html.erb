@@ -1,5 +1,5 @@
 <div class='carousel-photos'>
-  <%= image_tag('https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/main-1.png') %>
-  <%= image_tag('https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/main-2.png') %>
-  <%= image_tag('https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/main-3.png') %>
+  <% @landing_images.each do |image| %>
+    <%= image_tag(image.file) %>
+  <% end %>
 </div>

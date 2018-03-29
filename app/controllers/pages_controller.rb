@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-  def landing; end
+  def landing
+    @landing_images = LandingImage.last(3)
+  end
 
   def about; end
 
