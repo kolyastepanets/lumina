@@ -121,8 +121,7 @@
   border-bottom: 1px solid black;
 }
 .leave-comment {
-  width: 50%;
-  display: inline-block;
+  text-align: center;
   a {
     color: #384151;
     font-family: 'Karla', sans-serif;
@@ -143,15 +142,12 @@
   border-left: 1px solid #424040;
   width: 1px;
   height: 50px;
-  display: inline-block;
-  margin: 0 10px;
+  padding: 0;
 }
 .social-share-button {
   float: left;
 }
 .share-social-links {
-  width: 50%;
-  display: inline-block;
   ul {
     list-style: none;
     outline: 0;

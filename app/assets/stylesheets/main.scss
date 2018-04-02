@@ -77,13 +77,6 @@ body {
 }
 .site-header-main {
   margin-bottom: 1em;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 .site-branding, .site-header-menu, .header-image {
   margin-top: 1.75em;
@@ -92,6 +85,10 @@ body {
 .header-image {
   clear: both;
   margin: 0.875em auto 50px auto;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
   @media screen and (max-width: 640px) {
     img {
       width: 300px;
@@ -107,13 +104,9 @@ body {
 .site-header-menu {
   margin-top: 0px;
   margin-bottom: 12px;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
   width: 100%;
 }
 .main-navigation {
-  margin: 0 auto !important;
   border-bottom: 1px solid black;
   ul {
     list-style: none;
@@ -145,10 +138,6 @@ body {
       }
     }
   }
-}
-.menu-main-menu-container {
-  display: table;
-  margin: 0 auto;
 }
 .main-navigation .primary-menu > li {
   display: inline-block;
