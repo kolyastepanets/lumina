@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
+//= require imagesloaded.pkgd.min
 //= require isotope.min
 //= require slick.min
 //= require social-share-button

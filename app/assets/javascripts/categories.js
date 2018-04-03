@@ -6,9 +6,11 @@ $(document).ready(function() {
     }
   );
 
-  var $grid = $('.grid').isotope({
-    itemSelector: '.grid-item',
-    layoutMode: 'fitRows'
+  var $grid = $('.grid').imagesLoaded( function() {
+    $grid.isotope({
+      itemSelector: '.grid-item',
+      layoutMode: 'fitRows'
+    });
   });
 
   $('[data-show]').on( 'click', function(e) {
