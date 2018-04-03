@@ -2,13 +2,30 @@ $(document).ready(function() {
   var isMobile = window.matchMedia("only screen and (max-width: 767px)");
   var isSmallDesktop = window.matchMedia("(min-width: 768px) and (max-width: 1199px)");
 
-  if (isSmallDesktop.matches) {
-    $('footer.site-footer').children('.footer-image-instagram').slice(-2).addClass("hidden")
-  } else {
-    $('footer.site-footer').children('.footer-image-instagram').slice(-2).removeClass("hidden")    
+  hideLastImages = function(number) {
+    $('footer.site-footer').children('.footer-image-instagram').slice(number).addClass("hidden")
   }
 
-  if (!isMobile.matches) {
+  showLastImages = function(number) {
+    $('footer.site-footer').children('.footer-image-instagram').slice(number).removeClass("hidden")
+  }
+
+  scrollToTop = function() {
+    $('.topbutton').click(function(){
+      $('html, body').animate({ scrollTop : 0 }, 800);
+      return false;
+    });
+  }
+
+  if (isSmallDesktop.matches) {
+    hideLastImages(-2)
+  } else {
+    showLastImages(-2)
+  }
+
+  if (isMobile.matches) {
+    hideLastImages(-3)
+  } else {
     $(window).scroll(function(){
       if ($(this).scrollTop() > 100) {
         $('.topbutton').fadeIn();
@@ -24,21 +41,23 @@ $(document).ready(function() {
       }
     });
 
-    $('.topbutton').click(function(){
-      $('html, body').animate({ scrollTop : 0 }, 800);
-      return false;
-    });
-  } else {
-    $('footer.site-footer').children('.footer-image-instagram').slice(-3).addClass("hidden")
+    scrollToTop();
   }
 
-  $('.carousel-photos').slick({
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear'
+  $loading = $('.loading');
+  $loading.removeClass('hidden');
+  var $slider = $('.carousel-photos').imagesLoaded( function() {
+    $slider.slick({
+      autoplay: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      lazyLoad: 'progressive',
+      cssEase: 'linear'
+    });
+    $loading.addClass('hidden');
+    $slider.removeClass('hidden');
   });
 });
