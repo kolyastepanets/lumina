@@ -156,21 +156,12 @@ body {
 .site-footer {
   align-items: center;
   background-color: rgb(239, 237, 234);
-  display: flex;
-  flex-wrap: wrap;
   padding: 0px 0px 1.75em 0px;
-  height: 270px;
+  height: 100%;
   margin-top: 50px;
-  @media (min-width: 1440px) {
-    height: 410px;
-  }
 }
 .footersocial {
   margin: 30px auto 0px auto;
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  display: flex;
   width: 100%;
   max-width: 1300px;
 }
@@ -191,13 +182,12 @@ body {
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
+  padding-top: 10px;
 }
 .footer-image-instagram {
-  width: 11.11%;
   margin-top: 10px;
-  @media screen and (max-width: 425px) {
-    width: 33.33%;
-  }
+  padding-left: 0px;
+  padding-right: 0px;
   img {
     width: 100%;
     height: auto;
@@ -207,12 +197,6 @@ body {
   }
 }
 .social-navigation {
-  margin: 20px auto 10px auto;
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  display: flex;
-  width: 100%;
   ul {
     list-style: none;
     margin: 0 0 -0.4375em;
@@ -235,14 +219,11 @@ body {
     width: 35px;
     outline: 0;
     color: #384151;
+    margin-top: 20px;
     &:hover {
       color: #ddd2cd;
     }
   }
-}
-.textwidget {
-  display: flex;
-  justify-content: space-between;
 }
 .menu-social-media-container {
   margin: 0 auto;

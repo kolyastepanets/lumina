@@ -1,5 +1,12 @@
 $(document).ready(function() {
-  var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+  var isMobile = window.matchMedia("only screen and (max-width: 767px)");
+  var isSmallDesktop = window.matchMedia("(min-width: 768px) and (max-width: 1199px)");
+
+  if (isSmallDesktop.matches) {
+    $('footer.site-footer').children('.footer-image-instagram').slice(-2).addClass("hidden")
+  } else {
+    $('footer.site-footer').children('.footer-image-instagram').slice(-2).removeClass("hidden")    
+  }
 
   if (!isMobile.matches) {
     $(window).scroll(function(){
@@ -21,6 +28,8 @@ $(document).ready(function() {
       $('html, body').animate({ scrollTop : 0 }, 800);
       return false;
     });
+  } else {
+    $('footer.site-footer').children('.footer-image-instagram').slice(-3).addClass("hidden")
   }
 
   $('.carousel-photos').slick({

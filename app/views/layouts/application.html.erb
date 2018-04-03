@@ -49,7 +49,7 @@
     <footer class='site-footer'>
       <h2 class='widget-title'>Cледите за нами в Instagram</h2>
       <% @photos.each do |photo| %>
-        <div class='footer-image-instagram'>
+        <div class='footer-image-instagram col-xs-4 col-sm-3 col-lg-2'>
           <%= link_to photo['link'], target: :_blank do %>
             <%= image_tag photo['images']['low_resolution']['url'] %>
           <% end %>
