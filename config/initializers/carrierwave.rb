@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
       aws_secret_access_key: Figaro.env.aws_key_secret,
       region:                Figaro.env.aws_region
     }
-    config.fog_directory = 'lumina-staging'
+    config.fog_directory = 'lumina-production'
     config.fog_public    = true
     config.storage       = :fog
   else

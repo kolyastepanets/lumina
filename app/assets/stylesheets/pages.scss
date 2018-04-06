@@ -50,18 +50,18 @@ h1 {
 }
 .carousel-photos {
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
   max-width: 830px;
   img {
     max-width: 1000px;
     max-height: 600px;
   }
   .slick-prev {
-    left: 0px;
+    left: -15px;
     z-index: 1;
   }
   .slick-next {
-    right: 0px;
+    right: -15px;
   }
   .slick-prev, .slick-next {
     top: 50%;

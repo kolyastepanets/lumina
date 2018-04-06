@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 /* Slider */
 .slick-loading .slick-list {
-  background: #fff url('https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/ajax-loader.gif') center center no-repeat;
+  background: #fff url('https://s3.eu-central-1.amazonaws.com/lumina-production/ajax-loader.gif') center center no-repeat;
 }
 /* Arrows */
 .slick-prev,
@@ -24,10 +24,10 @@
   background: transparent;
 }
 .slick-prev {
-  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/leftarrow.png);
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-production/leftarrow.png);
 }
 .slick-next {
-  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-staging/uploads/rightarrow.png);
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lumina-production/rightarrow.png);
 }
 .slick-prev:hover,
 .slick-next:hover {
