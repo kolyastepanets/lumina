@@ -68,6 +68,12 @@
     width: 220px;
   }
 }
+.article-container {
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
 .container-left, .container-right {
   padding-top: 50px;
 }
