@@ -4,7 +4,8 @@ class Category < ApplicationRecord
   friendly_id :slug, use: :slugged
   enum classification: TYPES
 
-  has_many :albulms
+  has_many :category_albulms, dependent: :destroy
+  has_many :albulms, through: :category_articles
   has_many :category_articles, dependent: :destroy
   has_many :articles, through: :category_articles
 

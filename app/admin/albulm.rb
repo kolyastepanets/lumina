@@ -47,8 +47,12 @@ ActiveAdmin.register Albulm do
     column :title
     column :slug
     column :category do |albulm|
-      span do
-        link_to albulm.category.title, admin_portfolio_category_path(albulm.category)
+      div do
+        albulm.categories.each do |category|
+          span do
+            link_to category.title, admin_portfolio_category_path(category)
+          end
+        end
       end
     end
     actions
@@ -59,7 +63,19 @@ ActiveAdmin.register Albulm do
       row :title_photo do
         image_tag albulm.title_photo.thumb
       end
-      rows :title, :slug, :category, :description
+      rows :title, :slug
+      row :categories do
+        div do
+          albulm.categories.each do |category|
+            span do
+              link_to category.title, admin_portfolio_category_path(category)
+            end
+          end
+        end
+      end
+      row :description do
+        albulm.description.html_safe
+      end
       row :images do
         ul do
           albulm.images.each do |image|
@@ -78,7 +94,11 @@ ActiveAdmin.register Albulm do
       f.input :slug
       f.input :title_photo, as: :jcropable, jcrop_options: { aspectRatio: 1 }
       f.input :description, as: :ckeditor
-      f.input :category, collection: Category.portfolio
+      f.input :categories,
+              as: :select2_multiple,
+              collection: Category.portfolio,
+              multiple: true,
+              input_html: { class: 'category-select', value: object.categories.pluck(:title) }
       f.label 'Add images'
       f.fields_for :images_attributes do |image_fields|
         image_fields.file_field :file, multiple: true

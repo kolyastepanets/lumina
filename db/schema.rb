@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329123305) do
+ActiveRecord::Schema.define(version: 20180421120802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,10 +51,8 @@ ActiveRecord::Schema.define(version: 20180329123305) do
     t.text "description"
     t.string "title_photo"
     t.string "slug"
-    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_albulms_on_category_id"
   end
 
   create_table "articles", force: :cascade do |t|
@@ -75,6 +73,15 @@ ActiveRecord::Schema.define(version: 20180329123305) do
     t.string "english_title"
     t.integer "classification"
     t.string "slug"
+  end
+
+  create_table "category_albulms", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "albulm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["albulm_id"], name: "index_category_albulms_on_albulm_id"
+    t.index ["category_id"], name: "index_category_albulms_on_category_id"
   end
 
   create_table "category_articles", force: :cascade do |t|
@@ -197,7 +204,6 @@ ActiveRecord::Schema.define(version: 20180329123305) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "albulms", "categories"
   add_foreign_key "category_articles", "articles"
   add_foreign_key "category_articles", "categories"
   add_foreign_key "comments", "articles"

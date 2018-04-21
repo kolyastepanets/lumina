@@ -7,8 +7,8 @@ class Article < ApplicationRecord
   mount_uploader :main_image, ArticleMainImageUploader
   mount_uploader :small_main_image, SmallArticleMainImageUploader
 
-  has_many :category_articles, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :category_articles, dependent: :destroy
   has_many :categories, -> { blog }, through: :category_articles, source: :category
 
   validates :title, :slug, :main_image, :small_main_image, :description, :preview_description, presence: true

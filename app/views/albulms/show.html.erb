@@ -1,12 +1,5 @@
 <div class='container'>
   <div class='row'>
-    <% @albulms.each do |albulm| %>
-      <div class="col-md-4 col-xs-6 center albulm-link">
-        <%= link_to albulm.title, albulm_path(albulm), { class: 'decorate-link' } %>
-      </div>
-    <% end %>
-  </div>
-  <div class='row'>
     <h1 class='albulm-title'>
       <%= @albulm.title %>
     </h1>
