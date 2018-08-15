@@ -140,6 +140,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.2)
     crass (1.0.2)
     daemons (1.2.5)
     database_cleaner (1.6.2)
@@ -162,6 +163,8 @@ GEM
     equalizer (0.0.11)
     erubi (1.7.0)
     erubis (2.7.0)
+    et-orbi (1.1.4)
+      tzinfo
     excon (0.59.0)
     execjs (2.7.0)
     factory_girl (4.8.1)
@@ -450,6 +453,8 @@ GEM
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.3)
+    rack-protection (2.0.3)
+      rack
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -512,6 +517,7 @@ GEM
       trollop (~> 2.1)
     recaptcha (4.6.2)
       json
+    redis (4.0.2)
     reek (4.7.2)
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
@@ -563,6 +569,8 @@ GEM
       tty-which (~> 0.3.0)
       virtus (~> 1.0)
     rubyzip (1.2.1)
+    rufus-scheduler (3.4.2)
+      et-orbi (~> 1.0)
     sass (3.5.2)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -580,6 +588,13 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
     sexp_processor (4.10.0)
+    sidekiq (5.2.1)
+      connection_pool (~> 2.2, >= 2.2.2)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.5, < 5)
+    sidekiq-cron (0.6.3)
+      rufus-scheduler (>= 3.3.0)
+      sidekiq (>= 4.2.1)
     social-share-button (1.1.0)
       coffee-rails
     sprockets (3.7.1)
@@ -674,10 +689,13 @@ DEPENDENCIES
   rspec-rails
   rubocop
   rubycritic
+  rufus-scheduler (~> 3.4.2)
   sass-rails (~> 5.0)
   select2-rails
   selenium-webdriver
   shoulda-matchers!
+  sidekiq
+  sidekiq-cron (~> 0.6.3)
   social-share-button
   traceroute
   translit

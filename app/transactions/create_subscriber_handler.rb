@@ -3,7 +3,7 @@ class CreateSubscriberHandler < BaseHandler
 
   def handle(transaction)
     id = Rails.application.message_verifier(:unsubscribe).generate(transaction.subscriber.id)
-    SubscriberMailer.delay.thank_you(transaction.subscriber, id)
+    SubscriberMailer.thank_you(transaction.subscriber, id).deliver_later
     { key: 'success', message: I18n.t('subscriber.subscription_created') }
   end
 

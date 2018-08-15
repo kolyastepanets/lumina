@@ -41,6 +41,9 @@ gem 'daemons'
 gem 'acts_as_list'
 gem 'browser'
 gem 'autoprefixer-rails'
+gem 'sidekiq'
+gem 'sidekiq-cron', '~> 0.6.3'
+gem 'rufus-scheduler', '~> 3.4.2'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

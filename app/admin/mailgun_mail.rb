@@ -12,7 +12,7 @@ ActiveAdmin.register MailgunMail, as: 'Email' do
           if resource.multiple_emails.present?
             create_and_send_multiple_emails(resource)
           else
-            OfficeMailer.delay.send_message(resource)
+            OfficeMailer.send_message(resource).deliver_later
           end
           redirect_to(collection_url)
         end
@@ -23,7 +23,7 @@ ActiveAdmin.register MailgunMail, as: 'Email' do
       Subscriber.active.find_each do |subscriber|
         SubscriberMailgunMail.create(subscriber_id: subscriber.id, mailgun_mail_id: resource.id)
         id = Rails.application.message_verifier(:unsubscribe).generate(subscriber.id)
-        SubscriberMailer.delay.send_message(resource, subscriber, id)
+        SubscriberMailer.send_message(resource, subscriber, id).deliver_later
       end
     end
   end
